@@ -391,19 +391,13 @@
         </div>
     </section>
 
-    <!-- WELCOME TEXT - БЕЛЫЙ ФОН -->
+    <!-- WELCOME TEXT - БЕЛЫЙ ФОН (УДАЛЕНЫ 2 АБЗАЦА) -->
     <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <div class="divider mb-10" data-aos="fade-down"></div>
             <h2 class="serif text-4xl md:text-5xl mb-6 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</h2>
             
             <div class="space-y-6 max-w-2xl mx-auto text-left concept-quote" data-aos="fade-up" data-aos-delay="100">
-                <p class="serif text-xl md:text-2xl italic text-center" style="color:var(--color-dark-burgundy);">
-                    «Мы выбрали жить и любить, несмотря ни на что»
-                </p>
-                <p class="text-base md:text-lg leading-relaxed font-light text-gray-600">
-                    Мы встретились не в 18 лет. Мы пришли друг к другу уже сформированными — со своими книгами, любимым кофе, йогой, трансформаторами и привычками. Наша любовь — не ожидание, а урожай.
-                </p>
                 <p class="text-base md:text-lg leading-relaxed font-light text-gray-600">
                     В этот сентябрьский день мы хотим разделить начало новой истории с теми, кто действительно дорог нашему сердцу.
                 </p>
@@ -437,7 +431,7 @@
         </div>
     </section>
 
-    <!-- DRESS CODE - БЕЛЫЙ ФОН -->
+    <!-- DRESS CODE - БЕЛЫЙ ФОН (ПАЛИТРА: 5+4 = 9 ЦВЕТОВ) -->
     <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="serif text-4xl md:text-5xl italic mb-4" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
@@ -447,15 +441,16 @@
             <div class="deco-line mb-10" data-aos="fade-up"></div>
 
             <div class="max-w-md mx-auto" data-aos="fade-up">
+                <!-- ПЕРВАЯ СТРОКА: 5 ЦВЕТОВ -->
                 <div class="flex flex-wrap justify-center gap-4">
                     <span class="color-swatch" style="background:#deb0b2;"></span>
                     <span class="color-swatch" style="background:#7e2129;"></span>
                     <span class="color-swatch" style="background:#7e836b;"></span>
-                    <span class="color-swatch" style="background:#b9142a;"></span>
                     <span class="color-swatch" style="background:#551c25;"></span>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4 mt-4">
                     <span class="color-swatch" style="background:#6a6a48;"></span>
+                </div>
+                <!-- ВТОРАЯ СТРОКА: 4 ЦВЕТА (без добавления новых) -->
+                <div class="flex flex-wrap justify-center gap-4 mt-4">
                     <span class="color-swatch" style="background:#a87653;"></span>
                     <span class="color-swatch" style="background:#7a5946;"></span>
                     <span class="color-swatch" style="background:#743232;"></span>
@@ -572,7 +567,6 @@
 
         const targetDate = new Date("September 5, 2026 16:00:00").getTime();
 
-        // Функция склонения числительных
         function declension(number, one, few, many) {
             const n = Math.abs(number) % 100;
             const n1 = n % 10;
@@ -597,7 +591,6 @@
             document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
 
-            // Склонения для подписей
             document.getElementById("days-label").innerText = declension(days, 'день', 'дня', 'дней');
             document.getElementById("hours-label").innerText = declension(hours, 'час', 'часа', 'часов');
             document.getElementById("minutes-label").innerText = declension(minutes, 'минута', 'минуты', 'минут');
