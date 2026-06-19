@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -31,15 +31,15 @@
         body {
             background-color: var(--color-beige);
             color: var(--color-text);
-            font-family: 'Lora', 'Georgia', serif;
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            font-weight: 400;
-            line-height: 1.8;
+            font-weight: 300;
+            line-height: 1.7;
         }
 
-        .heading-font {
-            font-family: 'Playfair Display', 'Georgia', serif;
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .hero-section {
@@ -67,7 +67,7 @@
         .hero-title {
             font-size: clamp(2.5rem, 8vw, 7rem);
             line-height: 1.1;
-            font-weight: 400;
+            font-weight: 300;
         }
 
         .divider {
@@ -104,9 +104,9 @@
         .timer-val {
             font-size: clamp(2rem, 5vw, 3.5rem);
             line-height: 1;
-            font-weight: 400;
+            font-weight: 300;
             color: var(--color-dark-burgundy);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .timer-label {
@@ -116,7 +116,7 @@
             color: var(--color-dark);
             opacity: 0.5;
             margin-top: 4px;
-            font-weight: 400;
+            font-weight: 300;
         }
 
         .rsvp-input {
@@ -129,8 +129,8 @@
             color: var(--color-beige);
             font-size: 0.95rem;
             transition: border-color 0.3s ease;
-            font-family: 'Lora', serif;
-            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
         }
 
         .rsvp-input:focus {
@@ -140,7 +140,7 @@
 
         .rsvp-input::placeholder {
             color: rgba(244, 241, 238, 0.5);
-            font-weight: 400;
+            font-weight: 300;
         }
 
         .rsvp-input option {
@@ -159,10 +159,11 @@
             background: white;
             transition: all 0.4s ease;
             border: 1px solid rgba(85, 28, 37, 0.12);
+            border-radius: 4px;
         }
 
         .map-card:hover {
-            box-shadow: 0 4px 20px rgba(85, 28, 37, 0.08);
+            box-shadow: 0 4px 24px rgba(85, 28, 37, 0.08);
         }
 
         .venue-image {
@@ -175,46 +176,32 @@
 
         .contact-card {
             background: white;
-            border: 1px solid rgba(85, 28, 37, 0.12);
+            border: 1px solid rgba(85, 28, 37, 0.15);
             transition: all 0.3s ease;
             max-width: 380px;
             margin: 0 auto;
-            padding: 2rem;
             border-radius: 4px;
+            padding: 2rem;
             text-align: center;
         }
 
         .contact-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(85, 28, 37, 0.1);
+            box-shadow: 0 8px 25px rgba(85, 28, 37, 0.12);
         }
 
         .contact-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             background: var(--color-dark-burgundy);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
             color: white;
-            font-size: 22px;
-        }
-
-        .contact-phone {
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 1.1rem;
-            color: var(--color-dark-burgundy);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .contact-phone:hover {
-            color: var(--color-burgundy);
+            font-size: 20px;
+            font-weight: 300;
         }
 
         .guest-field {
@@ -272,9 +259,9 @@
             color: var(--color-beige);
             background: transparent;
             transition: all 0.4s ease;
-            font-weight: 400;
+            font-weight: 300;
             letter-spacing: 0.15em;
-            font-family: 'Lora', serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .btn-rsvp:hover {
@@ -295,71 +282,23 @@
             color: var(--color-beige);
         }
 
-        /* Стили для текста */
-        .text-body {
-            font-family: 'Lora', serif;
-            font-weight: 400;
+        .timer-heading {
+            color: var(--color-dark-burgundy);
+            font-weight: 300;
+            letter-spacing: 0.3em;
         }
 
-        .text-body-light {
-            font-family: 'Lora', serif;
-            font-weight: 400;
-        }
-
-        .heading {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-
-        .heading-italic {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            font-style: italic;
-        }
-
-        /* Декоративные элементы */
-        .leaf-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+        .deco-line {
+            width: 40px;
+            height: 2px;
+            background: var(--color-dark-burgundy);
+            margin: 0 auto;
             opacity: 0.3;
         }
 
-        .leaf-divider .line {
-            width: 30px;
-            height: 1px;
-            background: var(--color-dark-burgundy);
-        }
-
-        .leaf-divider .diamond {
-            width: 6px;
-            height: 6px;
-            background: var(--color-dark-burgundy);
-            transform: rotate(45deg);
-        }
-
-        .bg-burgundy-dark .leaf-divider .line {
+        .bg-burgundy-dark .deco-line {
             background: var(--color-beige);
-        }
-
-        .bg-burgundy-dark .leaf-divider .diamond {
-            background: var(--color-beige);
-        }
-
-        /* Контактный блок */
-        .contact-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--color-dark);
-            opacity: 0.5;
-            font-weight: 400;
-        }
-
-        .bg-burgundy-dark .contact-label {
-            color: var(--color-beige);
-            opacity: 0.6;
+            opacity: 0.3;
         }
     </style>
 </head>
@@ -369,17 +308,17 @@
     <section class="hero-section">
         <div class="hero-image"></div>
         <div class="text-center text-white z-10 px-4">
-            <p class="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6" style="font-weight:400; letter-spacing:0.5em; font-family:'Lora',serif;">Приглашение на свадьбу</p>
-            <h1 class="hero-title mb-8" style="font-family:'Playfair Display',serif; font-weight:400; font-style:italic;">
+            <p class="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6 font-light" style="font-weight:200; letter-spacing:0.5em;">Приглашение на свадьбу</p>
+            <h1 class="serif hero-title italic font-light tracking-tighter mb-8" data-aos="zoom-out" data-aos-duration="2000">
                 Виталий <br class="md:hidden"> <span class="burgundy-text">&</span> Анастасия
             </h1>
             <div class="flex items-center justify-center space-x-4 md:space-x-6" data-aos="fade-up">
                 <span class="w-8 md:w-12 h-[1px] bg-white opacity-50"></span>
-                <p class="text-xl md:text-2xl tracking-widest" style="font-family:'Playfair Display',serif; font-weight:400; font-style:italic;">Сегодня, и навсегда</p>
+                <p class="serif text-xl md:text-2xl italic tracking-widest">Сегодня, и навсегда</p>
                 <span class="w-8 md:w-12 h-[1px] bg-white opacity-50"></span>
             </div>
             <div class="mt-6 flex justify-center gap-2" data-aos="fade-up" data-aos-delay="200">
-                <span class="text-[10px] uppercase tracking-widest opacity-60" style="font-weight:400; letter-spacing:0.3em; font-family:'Lora',serif;">05 сентября 2026</span>
+                <span class="text-[10px] uppercase tracking-widest opacity-60" style="font-weight:200; letter-spacing:0.3em;">05 сентября 2026</span>
             </div>
         </div>
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-40 flex flex-col items-center">
@@ -391,19 +330,19 @@
     <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <div class="divider mb-10" data-aos="fade-down"></div>
-            <h2 class="text-4xl md:text-5xl mb-6 heading-italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</h2>
+            <h2 class="serif text-4xl md:text-5xl mb-6 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</h2>
             
             <div class="space-y-6 max-w-2xl mx-auto text-left concept-quote" data-aos="fade-up" data-aos-delay="100">
-                <p class="text-xl md:text-2xl heading-italic text-center" style="color:var(--color-dark-burgundy);">
+                <p class="serif text-xl md:text-2xl italic text-center" style="color:var(--color-dark-burgundy);">
                     «Мы выбрали жить и любить, несмотря ни на что»
                 </p>
-                <p class="text-base md:text-lg leading-relaxed text-gray-600 text-body">
+                <p class="text-base md:text-lg leading-relaxed font-light text-gray-600">
                     Мы встретились не в 18 лет. Мы пришли друг к другу уже сформированными — со своими книгами, любимым кофе, йогой, трансформаторами и привычками. Наша любовь — не ожидание, а урожай.
                 </p>
-                <p class="text-base md:text-lg leading-relaxed text-gray-600 text-body">
+                <p class="text-base md:text-lg leading-relaxed font-light text-gray-600">
                     В этот сентябрьский день мы хотим разделить начало новой истории с теми, кто действительно дорог нашему сердцу.
                 </p>
-                <p class="text-base md:text-lg leading-relaxed heading-italic" style="color:var(--color-dark-burgundy);">
+                <p class="text-base md:text-lg leading-relaxed font-light italic serif" style="color:var(--color-dark-burgundy);">
                     Сентябрь, кружево, пирс на закате — всё говорит о том, что самое сладкое время — это сейчас.
                 </p>
             </div>
@@ -413,23 +352,19 @@
     <!-- DETAILS -->
     <section class="py-24 md:py-32 px-6 bg-burgundy-light">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl text-center mb-6 heading-italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Детали торжества</h2>
-            <div class="leaf-divider mb-12" data-aos="fade-up">
-                <span class="line"></span>
-                <span class="diamond"></span>
-                <span class="line"></span>
-            </div>
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Детали торжества</h2>
+            <div class="deco-line mb-12" data-aos="fade-up"></div>
 
             <div class="grid md:grid-cols-1 max-w-2xl mx-auto">
                 <div class="map-card p-8 shadow-sm text-center" data-aos="fade-right">
                     <img src="место.png" alt="Загородный клуб Лес до небес" class="venue-image" onerror="this.style.display='none'">
-                    <h3 class="text-2xl mb-4 heading" style="color:var(--color-dark-burgundy);">Место проведения</h3>
-                    <p class="text-xl md:text-2xl heading-italic mb-4" style="color:var(--color-dark-wood);">Загородный клуб «Лес до небес»</p>
-                    <p class="text-sm leading-relaxed text-gray-500 mb-6 text-body">
+                    <h3 class="serif text-2xl mb-4" style="color:var(--color-dark-burgundy);">Место проведения</h3>
+                    <p class="serif text-xl md:text-2xl italic mb-4" style="color:var(--color-dark-wood);">Загородный клуб «Лес до небес»</p>
+                    <p class="font-light text-gray-500 mb-6 text-sm leading-relaxed">
                         Праздник пройдет на живописной территории клуба. Мы влюбились в это место за его утонченность, уют и прекрасную природу вокруг.
                     </p>
-                    <p class="text-xs mb-6 text-gray-400 text-body" style="font-style:italic;">г. Екатеринбург, ул. Абрикосовая, д.7а</p>
-                    <a href="https://yandex.by/maps/org/les_do_nebes/80408221023/?ll=60.497312%2C56.712363&z=16.19" target="_blank" class="inline-block px-8 py-3 uppercase tracking-widest text-[9px] transition-all accent-bg text-body" style="letter-spacing:0.15em;">
+                    <p class="font-light text-gray-400 text-xs mb-6 italic">г. Екатеринбург, ул. Абрикосовая, д.7а</p>
+                    <a href="https://yandex.by/maps/org/les_do_nebes/80408221023/?ll=60.497312%2C56.712363&z=16.19" target="_blank" class="inline-block px-8 py-3 accent-bg uppercase tracking-widest text-[9px] transition-all" style="letter-spacing:0.15em;">
                         Построить маршрут
                     </a>
                 </div>
@@ -440,15 +375,11 @@
     <!-- DRESS CODE -->
     <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl heading-italic mb-4" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
-            <p class="text-sm text-gray-500 mb-6 max-w-md mx-auto text-body" data-aos="fade-up">
+            <h2 class="serif text-4xl md:text-5xl italic mb-4" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
+            <p class="text-sm font-light text-gray-500 mb-6 max-w-md mx-auto" data-aos="fade-up">
                 Мы будем рады видеть вас в нарядах, отражающих благородство осенней палитры
             </p>
-            <div class="leaf-divider mb-10" data-aos="fade-up">
-                <span class="line"></span>
-                <span class="diamond"></span>
-                <span class="line"></span>
-            </div>
+            <div class="deco-line mb-10" data-aos="fade-up"></div>
 
             <div class="max-w-md mx-auto" data-aos="fade-up">
                 <div class="flex flex-wrap justify-center gap-4">
@@ -472,7 +403,7 @@
     <!-- TIMER -->
     <section class="py-20 bg-[#f9f8f6]">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <p class="uppercase tracking-widest text-[10px] text-gray-400 mb-8 text-body" style="font-weight:400; letter-spacing:0.3em;">До встречи осталось:</p>
+            <p class="uppercase tracking-widest text-[10px] mb-8 timer-heading" style="letter-spacing:0.3em;">До встречи осталось:</p>
             <div class="timer-container">
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="100">
                     <span id="days" class="timer-val">00</span>
@@ -498,9 +429,9 @@
     <section class="py-24 md:py-32 px-6 bg-burgundy-dark">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-6xl heading-italic mb-4" style="color:var(--color-beige);">Подтверждение присутствия</h2>
-                <p class="font-extralight tracking-widest uppercase text-[10px] mb-4 text-body" style="color:var(--color-beige); opacity:0.6; letter-spacing:0.3em;">Для нас очень важно ваше присутствие</p>
-                <p class="text-xs text-body" style="color:var(--color-beige); opacity:0.7;">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-beige); font-weight:500;">30 июня 2026 года</strong>.</p>
+                <h2 class="serif text-4xl md:text-6xl italic mb-4" style="color:var(--color-beige);">Подтверждение присутствия</h2>
+                <p class="font-extralight tracking-widest uppercase text-[10px] mb-4" style="color:var(--color-beige); opacity:0.6; letter-spacing:0.3em;">Для нас очень важно ваше присутствие</p>
+                <p class="text-xs font-light" style="color:var(--color-beige); opacity:0.7;">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-beige); font-weight:400;">30 июня 2026 года</strong>.</p>
             </div>
             <form id="weddingForm" class="space-y-8" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
                 <input type="hidden" name="_subject" value="Новое подтверждение с сайта свадьбы">
@@ -530,22 +461,17 @@
         </div>
     </section>
 
-    <!-- CONTACTS - улучшенный блок -->
+    <!-- CONTACTS - возвращен к предыдущему виду -->
     <section class="py-24 md:py-32 px-6 bg-white">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl heading-italic mb-4" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Остались вопросы?</h2>
-            <div class="leaf-divider mb-12" data-aos="fade-up">
-                <span class="line"></span>
-                <span class="diamond"></span>
-                <span class="line"></span>
-            </div>
-            <p class="text-center text-gray-500 text-sm mb-12 text-body" data-aos="fade-up" style="max-width:400px; margin-left:auto; margin-right:auto;">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Остались вопросы?</h2>
+            <div class="divider-light mb-12" data-aos="fade-up"></div>
+            <p class="text-center text-gray-500 text-sm font-light mb-12" data-aos="fade-up">
                 Мы будем рады помочь вам сориентироваться в деталях праздника
             </p>
 
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-2xl mx-auto" data-aos="fade-up">
-                <!-- Карточка организатора -->
-                <div class="contact-card flex-1">
+            <div class="max-w-sm mx-auto" data-aos="fade-up">
+                <div class="contact-card">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -554,10 +480,10 @@
                             <path d="M16 10h.01"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl heading-italic mb-1" style="color:var(--color-dark-burgundy);">Организатор</h4>
-                    <p class="text-gray-500 text-sm mb-3 text-body">Все вопросы по мероприятию</p>
-                    <p class="text-lg heading" style="color:var(--color-dark-burgundy);">Виолетта</p>
-                    <a href="tel:+79521337356" class="contact-phone">
+                    <h4 class="serif text-xl mb-1" style="color:var(--color-dark-burgundy);">Организатор</h4>
+                    <p class="text-gray-500 text-sm font-light mb-3">Все вопросы по мероприятию</p>
+                    <p class="accent-color font-medium text-lg" style="font-family:'Cormorant Garamond',serif;">Виолетта</p>
+                    <a href="tel:+79521337356" class="text-gray-700 hover:text-[#551c25] transition-colors text-sm block mt-2">
                         +7 (952) 133-73-56
                     </a>
                 </div>
@@ -567,9 +493,9 @@
 
     <!-- FOOTER -->
     <footer class="py-16 text-center bg-[#f9f8f6]">
-        <div class="text-2xl md:text-3xl heading-italic mb-4" style="color:var(--color-dark-burgundy);">Виталий & Анастасия</div>
-        <p class="text-base md:text-lg heading-italic mb-6" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</p>
-        <p class="uppercase tracking-[0.3em] text-[9px] text-gray-400 mb-8 text-body" style="font-weight:400; letter-spacing:0.3em;">С любовью, до встречи!</p>
+        <div class="serif text-2xl md:text-3xl italic mb-4" style="color:var(--color-dark-burgundy);">Виталий & Анастасия</div>
+        <p class="serif text-base md:text-lg italic mb-6" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</p>
+        <p class="uppercase tracking-[0.3em] text-[9px] text-gray-400 mb-8 font-light" style="letter-spacing:0.3em;">С любовью, до встречи!</p>
         <div class="divider h-10"></div>
     </footer>
 
