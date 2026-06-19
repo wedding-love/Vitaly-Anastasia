@@ -23,6 +23,7 @@
             --color-beige: #f4f1ee;
             --color-text: #3d3d3d;
             --color-white: #ffffff;
+            --color-gold-light: #d4b896;
         }
 
         body {
@@ -383,6 +384,12 @@
         .text-venu-light {
             color: #4a4a4a;
         }
+
+        /* Темный текст для "Для нас очень важно ваше присутствие" */
+        .text-important-dark {
+            color: #1a1a1a;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -513,7 +520,9 @@
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="serif text-4xl md:text-6xl italic mb-4" style="color:var(--color-dark-burgundy);">Подтверждение присутствия</h2>
-                <p class="font-extralight tracking-widest uppercase text-[10px] text-gray-400 mb-4" style="letter-spacing:0.3em;">Для нас очень важно ваше присутствие</p>
+                <p class="font-extralight tracking-widest uppercase text-[10px] mb-4 text-important-dark" style="letter-spacing:0.3em; color:#1a1a1a; opacity:1;">
+                    Для нас очень важно ваше присутствие
+                </p>
                 <p class="text-xs font-light text-gray-500">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-dark-burgundy); font-weight:400;">30 июня 2026 года</strong>.</p>
             </div>
             <form id="weddingForm" class="space-y-8" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
