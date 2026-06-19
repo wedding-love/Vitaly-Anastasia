@@ -17,11 +17,8 @@
             --color-burgundy: #7e2129;
             --color-dark-burgundy: #551c25;
             --color-rose: #deb0b2;
-            --color-olive: #7e836b;
-            --color-dark-olive: #6a6a48;
             --color-wood: #a87653;
             --color-dark-wood: #7a5946;
-            --color-terracotta: #743232;
             --color-dark: #413b3f;
             --color-beige: #f4f1ee;
             --color-text: #3d3d3d;
@@ -85,6 +82,14 @@
             opacity: 0.4;
         }
 
+        .divider-beige {
+            width: 30px;
+            height: 2px;
+            background: var(--color-beige);
+            margin: 12px auto;
+            opacity: 0.5;
+        }
+
         .burgundy-text {
             color: var(--color-dark-burgundy);
         }
@@ -105,7 +110,7 @@
             font-size: clamp(2rem, 5vw, 3.5rem);
             line-height: 1;
             font-weight: 300;
-            color: var(--color-dark-burgundy);
+            color: var(--color-beige);
             font-family: 'Cormorant Garamond', serif;
         }
 
@@ -113,20 +118,20 @@
             font-size: clamp(0.45rem, 1.5vw, 0.65rem);
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--color-dark);
-            opacity: 0.5;
+            color: var(--color-beige);
+            opacity: 0.6;
             margin-top: 4px;
             font-weight: 300;
         }
 
         .rsvp-input {
             background: transparent;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 2px solid rgba(65, 59, 63, 0.2);
             padding: 0.75rem 0;
             width: 100%;
             border-radius: 0;
             -webkit-appearance: none;
-            color: var(--color-beige);
+            color: var(--color-dark);
             font-size: 0.95rem;
             transition: border-color 0.3s ease;
             font-family: 'Montserrat', sans-serif;
@@ -135,11 +140,11 @@
 
         .rsvp-input:focus {
             outline: none;
-            border-bottom-color: var(--color-beige);
+            border-bottom-color: var(--color-dark-burgundy);
         }
 
         .rsvp-input::placeholder {
-            color: rgba(244, 241, 238, 0.5);
+            color: rgba(65, 59, 63, 0.4);
             font-weight: 300;
         }
 
@@ -149,7 +154,7 @@
         }
 
         select.rsvp-input {
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23f4f1ee' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23413b3f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right center;
             background-size: 12px;
@@ -158,7 +163,7 @@
         .map-card {
             background: white;
             transition: all 0.4s ease;
-            border: 1px solid rgba(85, 28, 37, 0.12);
+            border: 1px solid rgba(85, 28, 37, 0.1);
             border-radius: 4px;
         }
 
@@ -175,8 +180,9 @@
         }
 
         .contact-card {
-            background: white;
-            border: 1px solid rgba(85, 28, 37, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             transition: all 0.3s ease;
             max-width: 380px;
             margin: 0 auto;
@@ -187,19 +193,19 @@
 
         .contact-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(85, 28, 37, 0.12);
+            background: rgba(255, 255, 255, 0.14);
         }
 
         .contact-icon {
             width: 48px;
             height: 48px;
-            background: var(--color-dark-burgundy);
+            background: var(--color-beige);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 12px;
-            color: white;
+            color: var(--color-dark-burgundy);
             font-size: 20px;
             font-weight: 300;
         }
@@ -245,6 +251,15 @@
             background-color: var(--color-burgundy);
         }
 
+        .accent-bg-beige {
+            background-color: var(--color-beige);
+            color: var(--color-dark-burgundy);
+        }
+
+        .accent-bg-beige:hover {
+            background-color: var(--color-white);
+        }
+
         .text-dark-wood {
             color: var(--color-dark-wood);
         }
@@ -255,8 +270,8 @@
         }
 
         .btn-rsvp {
-            border: 2px solid var(--color-beige);
-            color: var(--color-beige);
+            border: 2px solid var(--color-dark-burgundy);
+            color: var(--color-dark-burgundy);
             background: transparent;
             transition: all 0.4s ease;
             font-weight: 300;
@@ -265,12 +280,25 @@
         }
 
         .btn-rsvp:hover {
-            background-color: var(--color-beige);
-            color: var(--color-dark-burgundy);
+            background-color: var(--color-dark-burgundy);
+            color: white;
         }
 
-        .bg-burgundy-light {
-            background-color: rgba(85, 28, 37, 0.04);
+        /* Кнопка отправки — бордовая */
+        .btn-submit {
+            background-color: var(--color-dark-burgundy);
+            color: white;
+            border: 2px solid var(--color-dark-burgundy);
+            transition: all 0.4s ease;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--color-burgundy);
+            border-color: var(--color-burgundy);
+            color: white;
         }
 
         .bg-burgundy-dark {
@@ -282,8 +310,53 @@
             color: var(--color-beige);
         }
 
+        .bg-burgundy-dark .divider {
+            background: linear-gradient(to bottom, transparent, var(--color-beige), transparent);
+        }
+
+        .bg-burgundy-dark .divider-light {
+            background: var(--color-beige);
+        }
+
+        .bg-burgundy-dark .deco-line {
+            background: var(--color-beige);
+            opacity: 0.3;
+        }
+
+        .bg-burgundy-dark .text-gray-500 {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bg-burgundy-dark .text-gray-600 {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .bg-burgundy-dark .text-gray-400 {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .bg-burgundy-dark .concept-quote {
+            border-left-color: var(--color-beige);
+        }
+
+        .bg-burgundy-dark .color-swatch {
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .bg-burgundy-dark .contact-card .text-gray-500 {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bg-burgundy-dark .contact-card .text-gray-700 {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .bg-burgundy-dark .contact-card .text-gray-700:hover {
+            color: var(--color-beige);
+        }
+
         .timer-heading {
-            color: var(--color-dark-burgundy);
+            color: var(--color-beige);
             font-weight: 300;
             letter-spacing: 0.3em;
         }
@@ -296,8 +369,11 @@
             opacity: 0.3;
         }
 
-        .bg-burgundy-dark .deco-line {
+        .deco-line-beige {
+            width: 40px;
+            height: 2px;
             background: var(--color-beige);
+            margin: 0 auto;
             opacity: 0.3;
         }
     </style>
@@ -326,7 +402,7 @@
         </div>
     </section>
 
-    <!-- WELCOME TEXT -->
+    <!-- WELCOME TEXT - БЕЛЫЙ ФОН -->
     <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <div class="divider mb-10" data-aos="fade-down"></div>
@@ -349,18 +425,18 @@
         </div>
     </section>
 
-    <!-- DETAILS -->
-    <section class="py-24 md:py-32 px-6 bg-burgundy-light">
+    <!-- DETAILS - БОРДОВЫЙ ФОН, БЕЛАЯ КАРТОЧКА -->
+    <section class="py-24 md:py-32 px-6 bg-burgundy-dark">
         <div class="max-w-4xl mx-auto">
-            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Детали торжества</h2>
-            <div class="deco-line mb-12" data-aos="fade-up"></div>
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic" data-aos="fade-up" style="color:var(--color-beige);">Детали торжества</h2>
+            <div class="deco-line-beige mb-12" data-aos="fade-up"></div>
 
             <div class="grid md:grid-cols-1 max-w-2xl mx-auto">
                 <div class="map-card p-8 shadow-sm text-center" data-aos="fade-right">
                     <img src="место.png" alt="Загородный клуб Лес до небес" class="venue-image" onerror="this.style.display='none'">
                     <h3 class="serif text-2xl mb-4" style="color:var(--color-dark-burgundy);">Место проведения</h3>
                     <p class="serif text-xl md:text-2xl italic mb-4" style="color:var(--color-dark-wood);">Загородный клуб «Лес до небес»</p>
-                    <p class="font-light text-gray-500 mb-6 text-sm leading-relaxed">
+                    <p class="font-light text-gray-600 mb-6 text-sm leading-relaxed">
                         Праздник пройдет на живописной территории клуба. Мы влюбились в это место за его утонченность, уют и прекрасную природу вокруг.
                     </p>
                     <p class="font-light text-gray-400 text-xs mb-6 italic">г. Екатеринбург, ул. Абрикосовая, д.7а</p>
@@ -372,7 +448,7 @@
         </div>
     </section>
 
-    <!-- DRESS CODE -->
+    <!-- DRESS CODE - БЕЛЫЙ ФОН -->
     <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="serif text-4xl md:text-5xl italic mb-4" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
@@ -400,8 +476,8 @@
         </div>
     </section>
 
-    <!-- TIMER -->
-    <section class="py-20 bg-[#f9f8f6]">
+    <!-- TIMER - БОРДОВЫЙ ФОН -->
+    <section class="py-20 bg-burgundy-dark">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <p class="uppercase tracking-widest text-[10px] mb-8 timer-heading" style="letter-spacing:0.3em;">До встречи осталось:</p>
             <div class="timer-container">
@@ -418,20 +494,20 @@
                     <div class="timer-label">минут</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="400">
-                    <span id="seconds" class="timer-val" style="color:var(--color-dark-burgundy);">00</span>
+                    <span id="seconds" class="timer-val">00</span>
                     <div class="timer-label">секунд</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RSVP FORM -->
-    <section class="py-24 md:py-32 px-6 bg-burgundy-dark">
+    <!-- RSVP FORM - БЕЛЫЙ ФОН -->
+    <section class="py-24 md:py-32 px-6 bg-white">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="serif text-4xl md:text-6xl italic mb-4" style="color:var(--color-beige);">Подтверждение присутствия</h2>
-                <p class="font-extralight tracking-widest uppercase text-[10px] mb-4" style="color:var(--color-beige); opacity:0.6; letter-spacing:0.3em;">Для нас очень важно ваше присутствие</p>
-                <p class="text-xs font-light" style="color:var(--color-beige); opacity:0.7;">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-beige); font-weight:400;">30 июня 2026 года</strong>.</p>
+                <h2 class="serif text-4xl md:text-6xl italic mb-4" style="color:var(--color-dark-burgundy);">Подтверждение присутствия</h2>
+                <p class="font-extralight tracking-widest uppercase text-[10px] text-gray-400 mb-4" style="letter-spacing:0.3em;">Для нас очень важно ваше присутствие</p>
+                <p class="text-xs font-light text-gray-500">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-dark-burgundy); font-weight:400;">30 июня 2026 года</strong>.</p>
             </div>
             <form id="weddingForm" class="space-y-8" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
                 <input type="hidden" name="_subject" value="Новое подтверждение с сайта свадьбы">
@@ -453,7 +529,7 @@
                 </div>
 
                 <div class="text-center pt-4">
-                    <button type="submit" class="w-full md:w-auto px-12 py-4 btn-rsvp uppercase tracking-widest text-[11px] transition-all duration-500">
+                    <button type="submit" class="w-full md:w-auto px-12 py-4 btn-submit uppercase tracking-widest text-[11px] transition-all duration-500">
                         Отправить ответ
                     </button>
                 </div>
@@ -461,12 +537,12 @@
         </div>
     </section>
 
-    <!-- CONTACTS - возвращен к предыдущему виду -->
-    <section class="py-24 md:py-32 px-6 bg-white">
+    <!-- CONTACTS - БОРДОВЫЙ ФОН -->
+    <section class="py-24 md:py-32 px-6 bg-burgundy-dark">
         <div class="max-w-3xl mx-auto">
-            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Остались вопросы?</h2>
-            <div class="divider-light mb-12" data-aos="fade-up"></div>
-            <p class="text-center text-gray-500 text-sm font-light mb-12" data-aos="fade-up">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic" data-aos="fade-up" style="color:var(--color-beige);">Остались вопросы?</h2>
+            <div class="divider-beige mb-12" data-aos="fade-up"></div>
+            <p class="text-center text-sm font-light mb-12" style="color:rgba(255,255,255,0.6);" data-aos="fade-up">
                 Мы будем рады помочь вам сориентироваться в деталях праздника
             </p>
 
@@ -480,10 +556,10 @@
                             <path d="M16 10h.01"/>
                         </svg>
                     </div>
-                    <h4 class="serif text-xl mb-1" style="color:var(--color-dark-burgundy);">Организатор</h4>
-                    <p class="text-gray-500 text-sm font-light mb-3">Все вопросы по мероприятию</p>
-                    <p class="accent-color font-medium text-lg" style="font-family:'Cormorant Garamond',serif;">Виолетта</p>
-                    <a href="tel:+79521337356" class="text-gray-700 hover:text-[#551c25] transition-colors text-sm block mt-2">
+                    <h4 class="serif text-xl mb-1" style="color:var(--color-beige);">Организатор</h4>
+                    <p class="text-sm font-light mb-3" style="color:rgba(255,255,255,0.6);">Все вопросы по мероприятию</p>
+                    <p class="font-medium text-lg" style="color:var(--color-beige); font-family:'Cormorant Garamond',serif;">Виолетта</p>
+                    <a href="tel:+79521337356" class="transition-colors text-sm block mt-2" style="color:rgba(255,255,255,0.7);">
                         +7 (952) 133-73-56
                     </a>
                 </div>
@@ -491,8 +567,8 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-16 text-center bg-[#f9f8f6]">
+    <!-- FOOTER - БЕЛЫЙ ФОН -->
+    <footer class="py-16 text-center bg-white">
         <div class="serif text-2xl md:text-3xl italic mb-4" style="color:var(--color-dark-burgundy);">Виталий & Анастасия</div>
         <p class="serif text-base md:text-lg italic mb-6" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</p>
         <p class="uppercase tracking-[0.3em] text-[9px] text-gray-400 mb-8 font-light" style="letter-spacing:0.3em;">С любовью, до встречи!</p>
