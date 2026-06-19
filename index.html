@@ -23,7 +23,6 @@
             --color-beige: #f4f1ee;
             --color-text: #3d3d3d;
             --color-white: #ffffff;
-            --color-gold-light: #d4b896;
         }
 
         body {
@@ -118,7 +117,7 @@
         .timer-label {
             font-size: clamp(0.45rem, 1.5vw, 0.65rem);
             letter-spacing: 0.15em;
-            text-transform: uppercase;
+            text-transform: lowercase;
             color: var(--color-beige);
             opacity: 0.6;
             margin-top: 4px;
@@ -270,21 +269,6 @@
             padding-left: 1.5rem;
         }
 
-        .btn-rsvp {
-            border: 2px solid var(--color-dark-burgundy);
-            color: var(--color-dark-burgundy);
-            background: transparent;
-            transition: all 0.4s ease;
-            font-weight: 300;
-            letter-spacing: 0.15em;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .btn-rsvp:hover {
-            background-color: var(--color-dark-burgundy);
-            color: white;
-        }
-
         .btn-submit {
             background-color: var(--color-dark-burgundy);
             color: white;
@@ -377,15 +361,6 @@
             opacity: 0.3;
         }
 
-        .text-venu {
-            color: var(--color-dark);
-        }
-
-        .text-venu-light {
-            color: #4a4a4a;
-        }
-
-        /* Темный текст для "Для нас очень важно ваше присутствие" */
         .text-important-dark {
             color: #1a1a1a;
             opacity: 1;
@@ -497,19 +472,19 @@
             <div class="timer-container">
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="100">
                     <span id="days" class="timer-val">00</span>
-                    <div class="timer-label">дней</div>
+                    <div id="days-label" class="timer-label">дней</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="200">
                     <span id="hours" class="timer-val">00</span>
-                    <div class="timer-label">часов</div>
+                    <div id="hours-label" class="timer-label">часов</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="300">
                     <span id="minutes" class="timer-val">00</span>
-                    <div class="timer-label">минут</div>
+                    <div id="minutes-label" class="timer-label">минут</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="400">
                     <span id="seconds" class="timer-val">00</span>
-                    <div class="timer-label">секунд</div>
+                    <div id="seconds-label" class="timer-label">секунд</div>
                 </div>
             </div>
         </div>
@@ -597,16 +572,38 @@
 
         const targetDate = new Date("September 5, 2026 16:00:00").getTime();
 
+        // Функция склонения числительных
+        function declension(number, one, few, many) {
+            const n = Math.abs(number) % 100;
+            const n1 = n % 10;
+            if (n > 10 && n < 20) return many;
+            if (n1 > 1 && n1 < 5) return few;
+            if (n1 === 1) return one;
+            return many;
+        }
+
         const updateCountdown = () => {
             const now = new Date().getTime();
             const distance = targetDate - now;
             if (distance < 0) return;
 
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            // Склонения для подписей
+            document.getElementById("days-label").innerText = declension(days, 'день', 'дня', 'дней');
+            document.getElementById("hours-label").innerText = declension(hours, 'час', 'часа', 'часов');
+            document.getElementById("minutes-label").innerText = declension(minutes, 'минута', 'минуты', 'минут');
+            document.getElementById("seconds-label").innerText = declension(seconds, 'секунда', 'секунды', 'секунд');
         };
+
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
