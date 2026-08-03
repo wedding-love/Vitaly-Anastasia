@@ -80,14 +80,6 @@
             margin: 0 auto;
         }
 
-        .divider-light {
-            width: 30px;
-            height: 2px;
-            background: var(--color-dark-burgundy);
-            margin: 12px auto;
-            opacity: 0.4;
-        }
-
         .divider-beige {
             width: 30px;
             height: 2px;
@@ -287,48 +279,6 @@
             background-color: var(--color-burgundy);
         }
 
-        .accent-bg-beige {
-            background-color: var(--color-beige);
-            color: var(--color-dark-burgundy);
-        }
-
-        .accent-bg-beige:hover {
-            background-color: var(--color-white);
-        }
-
-        .text-dark-wood {
-            color: var(--color-dark-wood);
-        }
-
-        .concept-quote {
-            border-left: 2px solid var(--color-dark-burgundy);
-            padding-left: 1.5rem;
-        }
-
-        .btn-submit {
-            background-color: var(--color-dark-burgundy);
-            color: white;
-            border: 2px solid var(--color-dark-burgundy);
-            transition: all 0.4s ease;
-            font-weight: 300;
-            letter-spacing: 0.15em;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .btn-submit {
-                width: auto;
-            }
-        }
-
-        .btn-submit:hover {
-            background-color: var(--color-burgundy);
-            border-color: var(--color-burgundy);
-            color: white;
-        }
-
         .bg-burgundy-dark {
             background-color: var(--color-dark-burgundy);
             color: var(--color-beige);
@@ -340,10 +290,6 @@
 
         .bg-burgundy-dark .divider {
             background: linear-gradient(to bottom, transparent, var(--color-beige), transparent);
-        }
-
-        .bg-burgundy-dark .divider-light {
-            background: var(--color-beige);
         }
 
         .bg-burgundy-dark .deco-line {
@@ -361,10 +307,6 @@
 
         .bg-burgundy-dark .text-gray-400 {
             color: rgba(255, 255, 255, 0.5);
-        }
-
-        .bg-burgundy-dark .concept-quote {
-            border-left-color: var(--color-beige);
         }
 
         .bg-burgundy-dark .color-swatch {
@@ -405,11 +347,6 @@
             opacity: 0.3;
         }
 
-        .text-important-dark {
-            color: #1a1a1a;
-            opacity: 1;
-        }
-
         .custom-radio,
         .custom-checkbox {
             display: flex;
@@ -431,12 +368,6 @@
             cursor: pointer;
             min-width: 18px;
             margin: 0;
-        }
-
-        .custom-radio label,
-        .custom-checkbox label {
-            cursor: pointer;
-            flex: 1;
         }
 
         .form-label {
@@ -464,15 +395,10 @@
             border-radius: 4px;
             padding: 1.5rem;
             border-left: 3px solid var(--color-dark-burgundy);
-            margin-bottom: 2rem;
-        }
-
-        .wish-block .serif {
-            color: var(--color-dark-burgundy);
         }
 
         .timing-item {
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
@@ -504,18 +430,10 @@
             letter-spacing: 0.05em;
         }
 
-        .timing-item .event-sub {
-            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
-            color: rgba(65, 59, 63, 0.5);
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
         .inline-radio-group {
             display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 4px;
             padding: 0;
         }
 
@@ -526,6 +444,7 @@
             cursor: pointer;
             font-weight: 300;
             font-size: clamp(0.85rem, 2vw, 0.95rem);
+            padding: 4px 0;
         }
 
         .inline-radio-group input[type="radio"] {
@@ -548,24 +467,33 @@
             padding-bottom: 0;
         }
 
-        .children-field .rsvp-input {
-            margin-top: 0;
+        .btn-submit {
+            background-color: var(--color-dark-burgundy);
+            color: white;
+            border: 2px solid var(--color-dark-burgundy);
+            transition: all 0.4s ease;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            width: 100%;
         }
 
-        .guest-field .rsvp-input {
-            margin-top: 0;
+        @media (min-width: 768px) {
+            .btn-submit {
+                width: auto;
+            }
         }
 
-        .other-field .rsvp-input {
-            margin-top: 0;
+        .btn-submit:hover {
+            background-color: var(--color-burgundy);
+            border-color: var(--color-burgundy);
+            color: white;
         }
 
-        .form-group .rsvp-input {
-            margin-top: 0;
-        }
-
-        .inline-radio-group {
-            padding: 0;
+        .concept-quote {
+            border-left: 2px solid var(--color-dark-burgundy);
+            padding-left: 1.5rem;
         }
     </style>
 </head>
@@ -640,53 +568,48 @@
             <div class="deco-line mb-14" data-aos="fade-up"></div>
             
             <div class="timing-wrapper">
-                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
-                    <span class="time serif italic mb-1 md:mb-0">16:00</span>
-                    <div class="md:ml-10 flex-grow">
-                        <h4 class="event serif uppercase tracking-widest">Сбор гостей / Welcome-зона</h4>
-                        <p class="event-sub">Лёгкие закуски, освежающие напитки</p>
-                    </div>
-                    <span class="event-sub hidden md:block">Welcome</span>
+                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
+                    <span class="time serif italic">16:00</span>
+                    <span class="event serif uppercase tracking-widest text-right">Сбор гостей / Welcome-зона</span>
                 </div>
-
-                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
-                    <span class="time serif italic mb-1 md:mb-0">16:30</span>
-                    <div class="md:ml-10 flex-grow">
-                        <h4 class="event serif uppercase tracking-widest">Свадебная церемония</h4>
-                        <p class="event-sub">Торжественный момент бракосочетания</p>
-                    </div>
-                    <span class="event-sub hidden md:block">Ceremony</span>
+                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
+                    <span class="time serif italic">16:30</span>
+                    <span class="event serif uppercase tracking-widest text-right">Свадебная церемония</span>
                 </div>
-
-                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
-                    <span class="time serif italic mb-1 md:mb-0">17:00</span>
-                    <div class="md:ml-10 flex-grow">
-                        <h4 class="event serif uppercase tracking-widest">Праздничный банкет</h4>
-                        <p class="event-sub">Тосты, поздравления, танцы и угощения</p>
-                    </div>
-                    <span class="event-sub hidden md:block">Banquet</span>
+                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
+                    <span class="time serif italic">17:00</span>
+                    <span class="event serif uppercase tracking-widest text-right">Праздничный банкет</span>
                 </div>
-
-                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
-                    <span class="time serif italic mb-1 md:mb-0">23:00</span>
-                    <div class="md:ml-10 flex-grow">
-                        <h4 class="event serif uppercase tracking-widest">Завершение вечера</h4>
-                        <p class="event-sub">Благодарности и тёплые прощания</p>
-                    </div>
-                    <span class="event-sub hidden md:block">Final</span>
+                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
+                    <span class="time serif italic">23:00</span>
+                    <span class="event serif uppercase tracking-widest text-right">Завершение вечера</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DRESS CODE - БОРДОВЫЙ ФОН -->
+    <!-- BLOCK WISHES - ОТДЕЛЬНЫЙ БЛОК (БОРДОВЫЙ ФОН) -->
     <section class="section-padding bg-burgundy-dark">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="serif text-4xl md:text-5xl italic mb-4 text-balance" data-aos="fade-up" style="color:var(--color-beige);">Дресс-код</h2>
-            <p class="text-sm font-light mb-6 max-w-md mx-auto text-balance" style="color:rgba(255,255,255,0.6);" data-aos="fade-up">
+            <h2 class="serif text-4xl md:text-5xl mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-beige);">Пожелания</h2>
+            <div class="deco-line-beige mb-10" data-aos="fade-up"></div>
+            
+            <div class="wish-block" data-aos="fade-up" style="background:rgba(255,255,255,0.06); border-left-color:var(--color-beige); max-width:700px; margin:0 auto; text-align:left;">
+                <p class="text-sm md:text-base font-light leading-relaxed text-balance" style="color:rgba(255,255,255,0.85);">
+                    Мы будем очень рады, если вместо традиционных цветов вы принесёте пачку корма для животных. Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается. Спасибо, что разделяете с нами это доброе дело!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRESS CODE - БЕЛЫЙ ФОН -->
+    <section class="section-padding bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="serif text-4xl md:text-5xl italic mb-4 text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
+            <p class="text-sm font-light text-gray-500 mb-6 max-w-md mx-auto text-balance" data-aos="fade-up">
                 Мы будем рады видеть вас в нарядах, отражающих благородство осенней палитры
             </p>
-            <div class="deco-line-beige mb-10" data-aos="fade-up"></div>
+            <div class="deco-line mb-10" data-aos="fade-up"></div>
 
             <div class="max-w-md mx-auto" data-aos="fade-up">
                 <div class="flex flex-wrap justify-center gap-3 md:gap-4">
@@ -706,47 +629,40 @@
         </div>
     </section>
 
-    <!-- TIMER - БЕЛЫЙ ФОН -->
-    <section class="section-padding bg-white">
+    <!-- TIMER - БОРДОВЫЙ ФОН -->
+    <section class="section-padding bg-burgundy-dark">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <p class="uppercase tracking-widest text-[10px] text-gray-400 mb-8" style="letter-spacing:0.3em;">До встречи осталось:</p>
+            <p class="uppercase tracking-widest text-[10px] mb-8 timer-heading" style="letter-spacing:0.3em;">До встречи осталось:</p>
             <div class="timer-container">
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="100">
-                    <span id="days" class="serif timer-val block font-light" style="color:var(--color-dark-burgundy);">00</span>
-                    <div id="days-label" class="timer-label" style="color:var(--color-dark); opacity:0.5;">дней</div>
+                    <span id="days" class="timer-val">00</span>
+                    <div id="days-label" class="timer-label">дней</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="200">
-                    <span id="hours" class="serif timer-val block font-light" style="color:var(--color-dark-burgundy);">00</span>
-                    <div id="hours-label" class="timer-label" style="color:var(--color-dark); opacity:0.5;">часов</div>
+                    <span id="hours" class="timer-val">00</span>
+                    <div id="hours-label" class="timer-label">часов</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="300">
-                    <span id="minutes" class="serif timer-val block font-light" style="color:var(--color-dark-burgundy);">00</span>
-                    <div id="minutes-label" class="timer-label" style="color:var(--color-dark); opacity:0.5;">минут</div>
+                    <span id="minutes" class="timer-val">00</span>
+                    <div id="minutes-label" class="timer-label">минут</div>
                 </div>
                 <div class="timer-item" data-aos="fade-up" data-aos-delay="400">
-                    <span id="seconds" class="serif timer-val block font-light" style="color:var(--color-burgundy);">00</span>
-                    <div id="seconds-label" class="timer-label" style="color:var(--color-dark); opacity:0.5;">секунд</div>
+                    <span id="seconds" class="timer-val">00</span>
+                    <div id="seconds-label" class="timer-label">секунд</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RSVP FORM - БОРДОВЫЙ ФОН -->
-    <section class="section-padding bg-burgundy-dark">
+    <!-- RSVP FORM - БЕЛЫЙ ФОН -->
+    <section class="section-padding bg-white">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                <h2 class="serif text-4xl md:text-6xl italic mb-4 text-balance" style="color:var(--color-beige);">Подтверждение присутствия</h2>
-                <p class="font-extralight tracking-widest uppercase text-[10px] mb-4" style="letter-spacing:0.3em; color:rgba(255,255,255,0.6);">
+                <h2 class="serif text-4xl md:text-6xl italic mb-4 text-balance" style="color:var(--color-dark-burgundy);">Подтверждение присутствия</h2>
+                <p class="font-extralight tracking-widest uppercase text-[10px] mb-4 text-important-dark" style="letter-spacing:0.3em; color:#1a1a1a; opacity:1;">
                     Для нас очень важно ваше присутствие
                 </p>
-                <p class="text-xs font-light" style="color:rgba(255,255,255,0.5);">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-beige); font-weight:400;">30 июня 2026 года</strong>.</p>
-            </div>
-
-            <!-- Блок пожеланий перед анкетой -->
-            <div class="wish-block" data-aos="fade-up" style="background:rgba(255,255,255,0.06); border-left-color:var(--color-beige);">
-                <p class="text-sm font-light leading-relaxed text-balance" style="color:rgba(255,255,255,0.8);">
-                    Мы будем очень рады, если вместо традиционных цветов вы принесёте пачку корма для животных. Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается. Спасибо, что разделяете с нами это доброе дело!
-                </p>
+                <p class="text-xs font-light text-gray-500 text-balance">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-dark-burgundy); font-weight:400;">30 июня 2026 года</strong>.</p>
             </div>
             
             <form id="weddingForm" class="space-y-6" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
@@ -754,32 +670,32 @@
 
                 <!-- Имя -->
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Ваше Имя и Фамилия" required class="rsvp-input" style="border-bottom-color:rgba(255,255,255,0.2); color:var(--color-beige);">
+                    <input type="text" name="name" placeholder="Ваше Имя и Фамилия" required class="rsvp-input">
                 </div>
 
                 <!-- Присутствие -->
                 <div class="form-group">
-                    <select name="attendance" id="attendanceSelect" class="rsvp-input" style="border-bottom-color:rgba(255,255,255,0.2); color:var(--color-beige); background-image:url(&quot;data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E&quot;);">
-                        <option value="yes" style="color:#333;">Я приду один/одна</option>
-                        <option value="couple" style="color:#333;">Я приду с гостем (+1)</option>
-                        <option value="no" style="color:#333;">К сожалению, не смогу прийти</option>
+                    <select name="attendance" id="attendanceSelect" class="rsvp-input">
+                        <option value="yes">Я приду один/одна</option>
+                        <option value="couple">Я приду с гостем (+1)</option>
+                        <option value="no">К сожалению, не смогу прийти</option>
                     </select>
                 </div>
 
                 <!-- Гость -->
                 <div class="guest-field" id="guestField">
-                    <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input" style="border-bottom-color:rgba(255,255,255,0.2); color:var(--color-beige);">
+                    <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
                 </div>
 
-                <!-- Дети -->
+                <!-- Дети - радиокнопки столбиком -->
                 <div class="form-group">
-                    <span class="form-label" style="color:var(--color-beige);">Будут ли с вами дети?</span>
+                    <span class="form-label">Будут ли с вами дети?</span>
                     <div class="inline-radio-group">
-                        <label style="color:var(--color-beige);">
+                        <label>
                             <input type="radio" name="children_attending" value="yes" id="childrenYes">
                             Да
                         </label>
-                        <label style="color:var(--color-beige);">
+                        <label>
                             <input type="radio" name="children_attending" value="no" id="childrenNo" checked>
                             Нет
                         </label>
@@ -788,18 +704,18 @@
 
                 <!-- Поле для детей -->
                 <div class="children-field" id="childrenField">
-                    <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна" class="rsvp-input" style="border-bottom-color:rgba(255,255,255,0.2); color:var(--color-beige);">
+                    <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна" class="rsvp-input">
                 </div>
 
                 <!-- Салаты -->
                 <div class="form-group">
-                    <span class="form-label" style="color:var(--color-beige);">Выберите салат (один вариант)</span>
+                    <span class="form-label">Выберите салат (один вариант)</span>
                     <div class="radio-group">
-                        <label class="custom-radio" style="color:var(--color-beige);">
+                        <label class="custom-radio">
                             <input type="radio" name="salad" value="Цезарь">
                             <span>Цезарь</span>
                         </label>
-                        <label class="custom-radio" style="color:var(--color-beige);">
+                        <label class="custom-radio">
                             <input type="radio" name="salad" value="Салат с вяленой уткой">
                             <span>Салат с вяленой уткой</span>
                         </label>
@@ -808,17 +724,17 @@
 
                 <!-- Горячее -->
                 <div class="form-group">
-                    <span class="form-label" style="color:var(--color-beige);">Выберите горячее блюдо (один вариант)</span>
+                    <span class="form-label">Выберите горячее блюдо (один вариант)</span>
                     <div class="radio-group">
-                        <label class="custom-radio" style="color:var(--color-beige);">
+                        <label class="custom-radio">
                             <input type="radio" name="main" value="Утиная ножка с бэби картофель">
                             <span>Утиная ножка с бэби картофель</span>
                         </label>
-                        <label class="custom-radio" style="color:var(--color-beige);">
+                        <label class="custom-radio">
                             <input type="radio" name="main" value="Вырезка из говядины с картофельным пюре">
                             <span>Вырезка из говядины с картофельным пюре</span>
                         </label>
-                        <label class="custom-radio" style="color:var(--color-beige);">
+                        <label class="custom-radio">
                             <input type="radio" name="main" value="Лосось на пару с рататуем">
                             <span>Лосось на пару с рататуем</span>
                         </label>
@@ -827,25 +743,25 @@
 
                 <!-- Алкоголь -->
                 <div class="form-group">
-                    <span class="form-label" style="color:var(--color-beige);">Выберите алкоголь (можно несколько вариантов)</span>
+                    <span class="form-label">Выберите алкоголь (можно несколько вариантов)</span>
                     <div class="checkbox-group">
-                        <label class="custom-checkbox" style="color:var(--color-beige);">
+                        <label class="custom-checkbox">
                             <input type="checkbox" name="alcohol" value="Белое вино п/сх">
                             <span>Белое вино п/сх</span>
                         </label>
-                        <label class="custom-checkbox" style="color:var(--color-beige);">
+                        <label class="custom-checkbox">
                             <input type="checkbox" name="alcohol" value="Красное сх">
                             <span>Красное сх</span>
                         </label>
-                        <label class="custom-checkbox" style="color:var(--color-beige);">
+                        <label class="custom-checkbox">
                             <input type="checkbox" name="alcohol" value="Коньяк">
                             <span>Коньяк</span>
                         </label>
-                        <label class="custom-checkbox" style="color:var(--color-beige);">
+                        <label class="custom-checkbox">
                             <input type="checkbox" name="alcohol" value="Водка">
                             <span>Водка</span>
                         </label>
-                        <label class="custom-checkbox" style="color:var(--color-beige);">
+                        <label class="custom-checkbox">
                             <input type="checkbox" name="alcohol" value="Другое" id="otherAlcohol">
                             <span>Другое</span>
                         </label>
@@ -854,11 +770,11 @@
 
                 <!-- Поле "Другое" для алкоголя -->
                 <div class="other-field" id="otherField">
-                    <input type="text" name="alcohol_other" placeholder="Укажите ваш вариант" class="rsvp-input" style="border-bottom-color:rgba(255,255,255,0.2); color:var(--color-beige);">
+                    <input type="text" name="alcohol_other" placeholder="Укажите ваш вариант" class="rsvp-input">
                 </div>
 
                 <div class="text-center pt-4">
-                    <button type="submit" class="px-8 md:px-12 py-4 bg-white text-[#551c25] uppercase tracking-widest text-[11px] transition-all duration-500 hover:bg-[#f4f1ee] border-2 border-white" style="font-weight:300; letter-spacing:0.15em;">
+                    <button type="submit" class="px-8 md:px-12 py-4 btn-submit uppercase tracking-widest text-[11px] transition-all duration-500">
                         Отправить ответ
                     </button>
                 </div>
@@ -866,17 +782,17 @@
         </div>
     </section>
 
-    <!-- CONTACTS - БЕЛЫЙ ФОН -->
-    <section class="section-padding bg-white">
+    <!-- CONTACTS - БОРДОВЫЙ ФОН -->
+    <section class="section-padding bg-burgundy-dark">
         <div class="max-w-3xl mx-auto">
-            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Остались вопросы?</h2>
-            <div class="divider-beige mb-12" data-aos="fade-up" style="background:var(--color-dark-burgundy); opacity:0.3;"></div>
-            <p class="text-center text-sm font-light mb-12 text-balance text-gray-500" data-aos="fade-up">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic text-balance" data-aos="fade-up" style="color:var(--color-beige);">Остались вопросы?</h2>
+            <div class="divider-beige mb-12" data-aos="fade-up"></div>
+            <p class="text-center text-sm font-light mb-12 text-balance" style="color:rgba(255,255,255,0.6);" data-aos="fade-up">
                 Мы будем рады помочь вам сориентироваться в деталях праздника
             </p>
 
             <div class="max-w-sm mx-auto px-4" data-aos="fade-up">
-                <div class="contact-card" style="background:rgba(85,28,37,0.04); border-color:rgba(85,28,37,0.1);">
+                <div class="contact-card">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -885,10 +801,10 @@
                             <path d="M16 10h.01"/>
                         </svg>
                     </div>
-                    <h4 class="serif text-xl mb-1" style="color:var(--color-dark-burgundy);">Организатор</h4>
-                    <p class="text-sm font-light mb-3 text-gray-500">Все вопросы по мероприятию</p>
-                    <p class="font-medium text-lg" style="color:var(--color-dark-burgundy); font-family:'Cormorant Garamond',serif;">Виолетта</p>
-                    <a href="tel:+79521337356" class="transition-colors text-sm block mt-2" style="color:var(--color-dark-wood);">
+                    <h4 class="serif text-xl mb-1" style="color:var(--color-beige);">Организатор</h4>
+                    <p class="text-sm font-light mb-3" style="color:rgba(255,255,255,0.6);">Все вопросы по мероприятию</p>
+                    <p class="font-medium text-lg" style="color:var(--color-beige); font-family:'Cormorant Garamond',serif;">Виолетта</p>
+                    <a href="tel:+79521337356" class="transition-colors text-sm block mt-2" style="color:rgba(255,255,255,0.7);">
                         +7 (952) 133-73-56
                     </a>
                 </div>
@@ -896,12 +812,12 @@
         </div>
     </section>
 
-    <!-- FOOTER - БОРДОВЫЙ ФОН -->
-    <footer class="section-padding text-center bg-burgundy-dark">
-        <div class="serif text-2xl md:text-3xl italic mb-4" style="color:var(--color-beige);">Виталий & Анастасия</div>
-        <p class="serif text-base md:text-lg italic mb-6" style="color:var(--color-beige);">Сегодня, и навсегда</p>
-        <p class="uppercase tracking-[0.3em] text-[9px] mb-8 font-light" style="letter-spacing:0.3em; color:rgba(255,255,255,0.4);">С любовью, до встречи!</p>
-        <div class="divider h-10" style="background:linear-gradient(to bottom, transparent, var(--color-beige), transparent);"></div>
+    <!-- FOOTER - БЕЛЫЙ ФОН -->
+    <footer class="section-padding text-center bg-white">
+        <div class="serif text-2xl md:text-3xl italic mb-4" style="color:var(--color-dark-burgundy);">Виталий & Анастасия</div>
+        <p class="serif text-base md:text-lg italic mb-6" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</p>
+        <p class="uppercase tracking-[0.3em] text-[9px] text-gray-400 mb-8 font-light" style="letter-spacing:0.3em;">С любовью, до встречи!</p>
+        <div class="divider h-10"></div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
