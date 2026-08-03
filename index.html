@@ -232,6 +232,20 @@
             margin-top: 20px;
         }
 
+        .children-field {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease;
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        .children-field.open {
+            max-height: 150px;
+            opacity: 1;
+            margin-top: 20px;
+        }
+
         .color-swatch {
             width: clamp(40px, 10vw, 52px);
             height: clamp(40px, 10vw, 52px);
@@ -450,33 +464,103 @@
         }
 
         .timing-item {
-            padding: 0.75rem 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .timing-item:last-child {
+            border-bottom: none;
         }
 
         .section-padding {
             padding: clamp(3rem, 10vw, 8rem) clamp(1rem, 5vw, 2.5rem);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .container {
-                padding: 0 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 4rem;
-            }
-        }
-
         .text-balance {
             text-wrap: balance;
+        }
+
+        /* Стили для тайминга как в примере */
+        .timing-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .timing-item .time {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--color-burgundy);
+        }
+
+        .timing-item .event {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--color-dark-burgundy);
+            letter-spacing: 0.05em;
+        }
+
+        .timing-item .event-sub {
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            color: rgba(65, 59, 63, 0.5);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Стили для блока пожеланий как в примере */
+        .wishes-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .wishes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .wish-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(85, 28, 37, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .wish-card:hover {
+            box-shadow: 0 4px 24px rgba(85, 28, 37, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .wish-card .serif {
+            color: var(--color-dark-burgundy);
+        }
+
+        .wish-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .inline-radio-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0;
+        }
+
+        .inline-radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 300;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        .inline-radio-group input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-dark-burgundy);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -521,6 +605,78 @@
         </div>
     </section>
 
+    <!-- TIMING (Программа дня) - как в примере -->
+    <section class="section-padding bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Программа дня</h2>
+            <div class="deco-line mb-14" data-aos="fade-up"></div>
+            
+            <div class="timing-wrapper">
+                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
+                    <span class="time serif italic mb-1 md:mb-0">16:00</span>
+                    <div class="md:ml-10 flex-grow">
+                        <h4 class="event serif uppercase tracking-widest">Сбор гостей / Welcome-зона</h4>
+                        <p class="event-sub">Лёгкие закуски, освежающие напитки</p>
+                    </div>
+                    <span class="event-sub hidden md:block">Welcome</span>
+                </div>
+
+                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
+                    <span class="time serif italic mb-1 md:mb-0">16:30</span>
+                    <div class="md:ml-10 flex-grow">
+                        <h4 class="event serif uppercase tracking-widest">Свадебная церемония</h4>
+                        <p class="event-sub">Торжественный момент бракосочетания</p>
+                    </div>
+                    <span class="event-sub hidden md:block">Ceremony</span>
+                </div>
+
+                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
+                    <span class="time serif italic mb-1 md:mb-0">17:00</span>
+                    <div class="md:ml-10 flex-grow">
+                        <h4 class="event serif uppercase tracking-widest">Праздничный банкет</h4>
+                        <p class="event-sub">Тосты, поздравления, танцы и угощения</p>
+                    </div>
+                    <span class="event-sub hidden md:block">Banquet</span>
+                </div>
+
+                <div class="timing-item flex flex-col md:flex-row items-center md:justify-between text-center md:text-left" data-aos="fade-up">
+                    <span class="time serif italic mb-1 md:mb-0">23:00</span>
+                    <div class="md:ml-10 flex-grow">
+                        <h4 class="event serif uppercase tracking-widest">Завершение вечера</h4>
+                        <p class="event-sub">Благодарности и тёплые прощания</p>
+                    </div>
+                    <span class="event-sub hidden md:block">Final</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK WISHES - как в примере -->
+    <section class="section-padding bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Пожелания</h2>
+            <div class="deco-line mb-14" data-aos="fade-up"></div>
+
+            <div class="wishes-grid" data-aos="fade-up">
+                <div class="wish-card text-center">
+                    <span class="icon">💝</span>
+                    <h3 class="serif text-2xl mb-3">Ваше внимание</h3>
+                    <p class="font-light text-gray-500 text-sm leading-relaxed">
+                        Ваше присутствие и тёплые слова — лучший подарок для нас. Мы хотим разделить этот день именно с вами, и это уже бесценно.
+                    </p>
+                </div>
+
+                <div class="wish-card text-center">
+                    <span class="icon">🐾</span>
+                    <h3 class="serif text-2xl mb-3">Вместо цветов</h3>
+                    <p class="font-light text-gray-500 text-sm leading-relaxed">
+                        Мы будем очень рады, если вместо традиционных букетов вы принесёте пачку корма для животных. Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается. Спасибо, что разделяете с нами это доброе дело!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- DETAILS - БОРДОВЫЙ ФОН -->
     <section class="section-padding bg-burgundy-dark">
         <div class="max-w-4xl mx-auto">
@@ -539,33 +695,6 @@
                     <a href="https://yandex.by/maps/org/les_do_nebes/80408221023/?ll=60.497312%2C56.712363&z=16.19" target="_blank" class="inline-block px-8 py-3 accent-bg uppercase tracking-widest text-[9px] transition-all w-full md:w-auto" style="letter-spacing:0.15em;">
                         Построить маршрут
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TIMING (Программа дня) -->
-    <section class="section-padding bg-white border-t border-gray-100">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Программа дня</h2>
-            <div class="deco-line mb-14" data-aos="fade-up"></div>
-            
-            <div class="space-y-3 max-w-md mx-auto px-2">
-                <div class="flex justify-between items-center border-b border-gray-100 pb-3 timing-item" data-aos="fade-up">
-                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">16:00</span>
-                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Фуршет / Welcome-зона</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-100 pb-3 timing-item" data-aos="fade-up">
-                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">16:30</span>
-                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Свадебная церемония</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-100 pb-3 timing-item" data-aos="fade-up">
-                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">17:00</span>
-                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Праздничный банкет</span>
-                </div>
-                <div class="flex justify-between items-center timing-item" data-aos="fade-up">
-                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">23:00</span>
-                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Завершение вечера</span>
                 </div>
             </div>
         </div>
@@ -633,15 +762,6 @@
                 </p>
                 <p class="text-xs font-light text-gray-500 text-balance">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-dark-burgundy); font-weight:400;">30 июня 2026 года</strong>.</p>
             </div>
-
-            <!-- Блок пожеланий (перед анкетой, без заголовка) -->
-            <div class="wish-block" data-aos="fade-up">
-                <p class="text-sm font-light text-gray-600 leading-relaxed text-balance">
-                    Мы будем очень рады, если вместо традиционных цветов вы принесёте пачку корма для животных.
-                    Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается.
-                    Спасибо, что разделяете с нами это доброе дело!
-                </p>
-            </div>
             
             <form id="weddingForm" class="space-y-6" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
                 <input type="hidden" name="_subject" value="Новое подтверждение с сайта свадьбы">
@@ -660,6 +780,26 @@
 
                 <div class="guest-field" id="guestField">
                     <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
+                </div>
+
+                <!-- Вопрос о детях - ОДНО ПОЛЕ -->
+                <div class="form-group">
+                    <span class="form-label">Будут ли с вами дети?</span>
+                    <div class="inline-radio-group">
+                        <label>
+                            <input type="radio" name="children_attending" value="yes" id="childrenYes">
+                            Да
+                        </label>
+                        <label>
+                            <input type="radio" name="children_attending" value="no" id="childrenNo" checked>
+                            Нет
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ОДНО поле для детей с подсказкой -->
+                <div class="children-field" id="childrenField">
+                    <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна" class="rsvp-input">
                 </div>
 
                 <!-- Салаты -->
@@ -723,12 +863,6 @@
                     </div>
                 </div>
 
-                <!-- Дети -->
-                <div class="form-group">
-                    <span class="form-label">Если вы берёте с собой детей</span>
-                    <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна (комментарий)" class="rsvp-input">
-                </div>
-
                 <div class="text-center pt-4">
                     <button type="submit" class="px-8 md:px-12 py-4 btn-submit uppercase tracking-widest text-[11px] transition-all duration-500">
                         Отправить ответ
@@ -761,7 +895,8 @@
                     <p class="text-sm font-light mb-3" style="color:rgba(255,255,255,0.6);">Все вопросы по мероприятию</p>
                     <p class="font-medium text-lg" style="color:var(--color-beige); font-family:'Cormorant Garamond',serif;">Виолетта</p>
                     <a href="tel:+79521337356" class="transition-colors text-sm block mt-2" style="color:rgba(255,255,255,0.7);">
-                        +7 (952) 133-73-56                    </a>
+                        +7 (952) 133-73-56
+                    </a>
                 </div>
             </div>
         </div>
@@ -814,6 +949,7 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
+        // Показ поля для гостя
         const attendanceSelect = document.getElementById('attendanceSelect');
         const guestField = document.getElementById('guestField');
 
@@ -831,6 +967,26 @@
             guestField.classList.add('open');
         }
 
+        // Показ ОДНОГО поля для детей
+        const childrenYes = document.getElementById('childrenYes');
+        const childrenNo = document.getElementById('childrenNo');
+        const childrenField = document.getElementById('childrenField');
+
+        childrenYes.addEventListener('change', function() {
+            if (this.checked) {
+                childrenField.classList.add('open');
+            }
+        });
+
+        childrenNo.addEventListener('change', function() {
+            if (this.checked) {
+                childrenField.classList.remove('open');
+                const input = childrenField.querySelector('input');
+                if (input) input.value = '';
+            }
+        });
+
+        // Отправка формы
         document.getElementById('weddingForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
@@ -847,6 +1003,7 @@
                     alert('Ваш ответ успешно отправлен! Спасибо за подтверждение.');
                     form.reset();
                     guestField.classList.remove('open');
+                    childrenField.classList.remove('open');
                     document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => el.checked = false);
                 } else {
                     alert('Произошла ошибка. Попробуйте еще раз или свяжитесь с нами напрямую.');
