@@ -245,8 +245,8 @@
         }
 
         .color-swatch {
-            width: clamp(40px, 10vw, 52px);
-            height: clamp(40px, 10vw, 52px);
+            width: clamp(44px, 10vw, 56px);
+            height: clamp(44px, 10vw, 56px);
             border-radius: 50%;
             display: inline-block;
             border: 2px solid rgba(0,0,0,0.06);
@@ -256,6 +256,34 @@
 
         .color-swatch:hover {
             transform: scale(1.06);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .color-grid .color-swatch {
+            width: 100%;
+            aspect-ratio: 1/1;
+            height: auto;
+        }
+
+        .color-grid-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .color-grid-row .color-swatch {
+            flex: 1;
+            aspect-ratio: 1/1;
+            max-width: 56px;
         }
 
         .accent-bg {
@@ -603,6 +631,7 @@
             <div class="grid md:grid-cols-1 max-w-2xl mx-auto">
                 <div class="map-card p-6 md:p-8 shadow-sm text-center" data-aos="fade-right">
                     <img src="место.png" alt="Загородный клуб Лес до небес" class="venue-image" onerror="this.style.display='none'">
+                    <h3 class="serif section-subtitle" style="color:var(--color-dark-burgundy);">Место проведения</h3>
                     <p class="serif section-subtitle italic mb-4" style="color:var(--color-dark-wood);">Загородный клуб «Лес до небес»</p>
                     <p class="body-text text-gray-700 mb-6" style="color:#2d2d2d;">
                         Уютный зал с панорамными окнами, вид на вековой лес и закат в оттенках меди и багрянца. Мы выбрали это место за его атмосферу — здесь хочется замедлиться и чувствовать каждое мгновение.
@@ -661,7 +690,7 @@
         </div>
     </section>
 
-    <!-- DRESS CODE - БЕЛЫЙ ФОН -->
+    <!-- DRESS CODE - БЕЛЫЙ ФОН (4+4 кружочка) -->
     <section class="section-padding bg-white border-t border-gray-100">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="section-title" data-aos="fade-up">Дресс-код</h2>
@@ -670,19 +699,15 @@
             </p>
             <div class="divider-dark" data-aos="fade-up"></div>
 
-            <div class="max-w-md mx-auto" data-aos="fade-up">
-                <div class="flex flex-wrap justify-center gap-3 md:gap-4">
-                    <span class="color-swatch" style="background:#deb0b2;"></span>
-                    <span class="color-swatch" style="background:#7e2129;"></span>
-                    <span class="color-swatch" style="background:#7e836b;"></span>
-                    <span class="color-swatch" style="background:#551c25;"></span>
-                    <span class="color-swatch" style="background:#6a6a48;"></span>
-                </div>
-                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-3 md:mt-4">
-                    <span class="color-swatch" style="background:#a87653;"></span>
-                    <span class="color-swatch" style="background:#7a5946;"></span>
-                    <span class="color-swatch" style="background:#743232;"></span>
-                </div>
+            <div class="color-grid" data-aos="fade-up">
+                <span class="color-swatch" style="background:#deb0b2;"></span>
+                <span class="color-swatch" style="background:#7e2129;"></span>
+                <span class="color-swatch" style="background:#7e836b;"></span>
+                <span class="color-swatch" style="background:#551c25;"></span>
+                <span class="color-swatch" style="background:#6a6a48;"></span>
+                <span class="color-swatch" style="background:#a87653;"></span>
+                <span class="color-swatch" style="background:#7a5946;"></span>
+                <span class="color-swatch" style="background:#743232;"></span>
             </div>
         </div>
     </section>
