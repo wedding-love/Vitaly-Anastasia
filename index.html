@@ -217,6 +217,7 @@
             font-weight: 300;
         }
 
+        /* Поля, которые появляются - НЕ занимают место до появления */
         .guest-field,
         .children-field,
         .other-field {
@@ -225,6 +226,7 @@
             transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
             opacity: 0;
             margin-top: 0;
+            padding: 0;
         }
 
         .guest-field.open,
@@ -233,6 +235,14 @@
             max-height: 150px;
             opacity: 1;
             margin-top: 1rem;
+            padding: 0;
+        }
+
+        .guest-field .rsvp-input,
+        .children-field .rsvp-input,
+        .other-field .rsvp-input {
+            margin-top: 0;
+            padding: 0.75rem 0;
         }
 
         .color-swatch {
@@ -458,20 +468,6 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        .guest-field .rsvp-input,
-        .children-field .rsvp-input,
-        .other-field .rsvp-input {
-            margin-top: 0;
-        }
-
-        .form-group .rsvp-input {
-            margin-top: 0;
-        }
-
-        .inline-radio-group {
-            padding: 0;
-        }
-
         .radio-group .custom-radio:first-child,
         .checkbox-group .custom-checkbox:first-child {
             padding-top: 0.4rem;
@@ -510,7 +506,7 @@
 
         /* Оригинальные размеры заголовков как в исходном коде */
         .section-title {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 300;
             font-style: italic;
             text-align: center;
@@ -523,7 +519,7 @@
         }
 
         .section-subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
             font-weight: 300;
             font-style: italic;
             text-align: center;
@@ -746,7 +742,7 @@
                     </select>
                 </div>
 
-                <!-- Гость -->
+                <!-- Гость - появляется при выборе "с гостем" -->
                 <div class="guest-field" id="guestField">
                     <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
                 </div>
@@ -766,7 +762,7 @@
                     </div>
                 </div>
 
-                <!-- Поле для детей -->
+                <!-- Поле для детей - появляется при выборе "Да" -->
                 <div class="children-field" id="childrenField">
                     <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна" class="rsvp-input">
                 </div>
@@ -832,7 +828,7 @@
                     </div>
                 </div>
 
-                <!-- Поле "Другое" для алкоголя -->
+                <!-- Поле "Другое" для алкоголя - появляется при выборе "Другое" -->
                 <div class="other-field" id="otherField">
                     <input type="text" name="alcohol_other" placeholder="Укажите ваш вариант" class="rsvp-input">
                 </div>
