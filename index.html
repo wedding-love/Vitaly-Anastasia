@@ -218,7 +218,6 @@
         }
 
         .guest-field,
-        .children-field,
         .other-field {
             max-height: 0;
             overflow: hidden;
@@ -229,7 +228,6 @@
         }
 
         .guest-field.open,
-        .children-field.open,
         .other-field.open {
             max-height: 150px;
             opacity: 1;
@@ -238,7 +236,6 @@
         }
 
         .guest-field .rsvp-input,
-        .children-field .rsvp-input,
         .other-field .rsvp-input {
             margin-top: 0;
             padding: 0.75rem 0;
@@ -344,47 +341,6 @@
             gap: 0;
         }
 
-        .inline-radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-            padding: 0;
-        }
-
-        .inline-radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-weight: 300;
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-            padding: 0.4rem 0;
-            transition: background 0.2s ease;
-        }
-
-        .inline-radio-group label:hover {
-            background: rgba(85, 28, 37, 0.04);
-            padding-left: 4px;
-            margin-left: -4px;
-        }
-
-        .inline-radio-group input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--color-dark-burgundy);
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .timing-item {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .timing-item:last-child {
-            border-bottom: none;
-        }
-
         .section-padding {
             padding: clamp(3rem, 10vw, 8rem) clamp(1rem, 5vw, 2.5rem);
         }
@@ -396,6 +352,15 @@
         .timing-wrapper {
             max-width: 700px;
             margin: 0 auto;
+        }
+
+        .timing-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .timing-item:last-child {
+            border-bottom: none;
         }
 
         .timing-item .time {
@@ -473,11 +438,9 @@
             font-weight: 300;
         }
 
-        .wish-card-alt .wish-sub {
-            margin-top: 0.75rem;
-            font-size: clamp(0.85rem, 1.4vw, 1rem);
-            opacity: 0.6;
-            color: rgba(255, 255, 255, 0.6);
+        .wish-card-alt .wish-highlight {
+            color: var(--color-beige);
+            font-weight: 400;
         }
 
         .radio-group .custom-radio:first-child,
@@ -487,14 +450,6 @@
 
         .radio-group .custom-radio:last-child,
         .checkbox-group .custom-checkbox:last-child {
-            padding-bottom: 0.4rem;
-        }
-
-        .form-group .inline-radio-group label:first-child {
-            padding-top: 0.4rem;
-        }
-
-        .form-group .inline-radio-group label:last-child {
             padding-bottom: 0.4rem;
         }
 
@@ -567,11 +522,18 @@
             text-transform: uppercase;
         }
 
-        /* Для очень маленьких экранов уменьшаем размер шрифта, но сохраняем в одну строку */
         @media (max-width: 480px) {
             .section-title {
                 font-size: clamp(1.6rem, 5vw, 2rem);
             }
+        }
+
+        .age-restriction {
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            color: var(--color-burgundy);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
         }
     </style>
 </head>
@@ -646,22 +608,19 @@
             
             <div class="timing-wrapper">
                 <div class="timing-item flex justify-between items-center" data-aos="fade-up">
+                    <span class="time serif italic">15:00</span>
+                    <span class="event serif uppercase tracking-widest text-right">Сбор гостей</span>
+                </div>
+                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
                     <span class="time serif italic">16:00</span>
-                    <span class="event serif uppercase tracking-widest text-right">Сбор гостей / Welcome-зона</span>
-                </div>
-                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
-                    <span class="time serif italic">16:30</span>
                     <span class="event serif uppercase tracking-widest text-right">Свадебная церемония</span>
-                </div>
-                <div class="timing-item flex justify-between items-center" data-aos="fade-up">
-                    <span class="time serif italic">17:00</span>
-                    <span class="event serif uppercase tracking-widest text-right">Праздничный банкет</span>
                 </div>
                 <div class="timing-item flex justify-between items-center" data-aos="fade-up">
                     <span class="time serif italic">23:00</span>
                     <span class="event serif uppercase tracking-widest text-right">Завершение вечера</span>
                 </div>
             </div>
+            <p class="age-restriction text-center mt-4">Мероприятие 16+</p>
         </div>
     </section>
 
@@ -674,9 +633,11 @@
             <div class="wish-card-alt" data-aos="fade-up">
                 <div class="deco-line-wish"></div>
                 <p>
-                    Мы будем очень рады, если вместо традиционных цветов вы принесёте пачку корма для животных. Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается.
+                    Дорогие гости! Мы будем очень рады вашему присутствию на нашем празднике. 
+                    Пожалуйста, <span class="wish-highlight">воздержитесь от цветов</span> — вместо этого мы будем благодарны, если вы принесёте пачку корма для животных. 
+                    Всё собранное мы передадим в приют, чтобы подарить заботу и тепло тем, кто в этом особенно нуждается.
                 </p>
-                <p class="wish-sub">
+                <p style="margin-top:0.75rem; font-size:clamp(0.85rem, 1.4vw, 1rem); opacity:0.7; color:rgba(255,255,255,0.7);">
                     Спасибо, что разделяете с нами это доброе дело!
                 </p>
             </div>
@@ -761,26 +722,6 @@
                 <!-- Гость -->
                 <div class="guest-field" id="guestField">
                     <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
-                </div>
-
-                <!-- Дети -->
-                <div class="form-group">
-                    <span class="form-label">Будут ли с вами дети?</span>
-                    <div class="inline-radio-group">
-                        <label>
-                            <input type="radio" name="children_attending" value="yes" id="childrenYes">
-                            Да
-                        </label>
-                        <label>
-                            <input type="radio" name="children_attending" value="no" id="childrenNo">
-                            Нет
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Поле для детей -->
-                <div class="children-field" id="childrenField">
-                    <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна" class="rsvp-input">
                 </div>
 
                 <!-- Салаты -->
@@ -953,30 +894,6 @@
             guestField.classList.add('open');
         }
 
-        // Поле для детей - изначально ничего не выбрано
-        const childrenYes = document.getElementById('childrenYes');
-        const childrenNo = document.getElementById('childrenNo');
-        const childrenField = document.getElementById('childrenField');
-
-        childrenYes.checked = false;
-        childrenNo.checked = false;
-
-        childrenYes.addEventListener('change', function() {
-            if (this.checked) {
-                childrenField.classList.add('open');
-                childrenNo.checked = false;
-            }
-        });
-
-        childrenNo.addEventListener('change', function() {
-            if (this.checked) {
-                childrenField.classList.remove('open');
-                childrenYes.checked = false;
-                const input = childrenField.querySelector('input');
-                if (input) input.value = '';
-            }
-        });
-
         // Поле "Другое" для алкоголя
         const otherAlcohol = document.getElementById('otherAlcohol');
         const otherField = document.getElementById('otherField');
@@ -1008,7 +925,6 @@
                     alert('Ваш ответ успешно отправлен! Спасибо за подтверждение.');
                     form.reset();
                     guestField.classList.remove('open');
-                    childrenField.classList.remove('open');
                     otherField.classList.remove('open');
                     document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => el.checked = false);
                 } else {
