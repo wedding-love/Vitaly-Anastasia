@@ -390,13 +390,6 @@
             gap: 0;
         }
 
-        .wish-block {
-            background: rgba(85, 28, 37, 0.04);
-            border-radius: 4px;
-            padding: 1.5rem;
-            border-left: 3px solid var(--color-dark-burgundy);
-        }
-
         .timing-item {
             padding: 0.75rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -495,6 +488,52 @@
             border-left: 2px solid var(--color-dark-burgundy);
             padding-left: 1.5rem;
         }
+
+        /* Блок пожеланий без иконок */
+        .wish-card-alt {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .wish-card-alt:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .wish-card-alt .deco-line-wish {
+            width: 50px;
+            height: 2px;
+            background: var(--color-beige);
+            margin: 0 auto 1.5rem;
+            opacity: 0.3;
+        }
+
+        .wish-card-alt p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .wish-card-alt .wish-highlight {
+            color: var(--color-beige);
+            font-weight: 400;
+        }
+
+        .wish-card-alt .wish-sub {
+            margin-top: 0.75rem;
+            font-size: clamp(0.85rem, 1.4vw, 1rem);
+            opacity: 0.6;
+            color: rgba(255, 255, 255, 0.6);
+        }
     </style>
 </head>
 <body>
@@ -588,15 +627,20 @@
         </div>
     </section>
 
-    <!-- BLOCK WISHES - ОТДЕЛЬНЫЙ БЛОК (БОРДОВЫЙ ФОН) -->
+    <!-- BLOCK WISHES - БЕЗ ИКОНОК (БОРДОВЫЙ ФОН) -->
     <section class="section-padding bg-burgundy-dark">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="serif text-4xl md:text-5xl mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-beige);">Пожелания</h2>
-            <div class="deco-line-beige mb-10" data-aos="fade-up"></div>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-beige);">Пожелания</h2>
+            <div class="deco-line-beige mb-12" data-aos="fade-up"></div>
             
-            <div class="wish-block" data-aos="fade-up" style="background:rgba(255,255,255,0.06); border-left-color:var(--color-beige); max-width:700px; margin:0 auto; text-align:left;">
-                <p class="text-sm md:text-base font-light leading-relaxed text-balance" style="color:rgba(255,255,255,0.85);">
-                    Мы будем очень рады, если вместо традиционных цветов вы принесёте пачку корма для животных. Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается. Спасибо, что разделяете с нами это доброе дело!
+            <div class="wish-card-alt" data-aos="fade-up">
+                <div class="deco-line-wish"></div>
+                <p>
+                    Мы будем очень рады, если вместо традиционных цветов вы принесёте <span class="wish-highlight">пачку корма для животных</span>. 
+                    Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается.
+                </p>
+                <p class="wish-sub">
+                    Спасибо, что разделяете с нами это доброе дело!
                 </p>
             </div>
         </div>
@@ -687,7 +731,7 @@
                     <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
                 </div>
 
-                <!-- Дети - радиокнопки столбиком -->
+                <!-- Дети - радиокнопки столбиком, изначально ничего не выбрано -->
                 <div class="form-group">
                     <span class="form-label">Будут ли с вами дети?</span>
                     <div class="inline-radio-group">
@@ -696,7 +740,7 @@
                             Да
                         </label>
                         <label>
-                            <input type="radio" name="children_attending" value="no" id="childrenNo" checked>
+                            <input type="radio" name="children_attending" value="no" id="childrenNo">
                             Нет
                         </label>
                     </div>
@@ -877,20 +921,25 @@
             guestField.classList.add('open');
         }
 
-        // Поле для детей
+        // Поле для детей - изначально ничего не выбрано
         const childrenYes = document.getElementById('childrenYes');
         const childrenNo = document.getElementById('childrenNo');
         const childrenField = document.getElementById('childrenField');
 
+        childrenYes.checked = false;
+        childrenNo.checked = false;
+
         childrenYes.addEventListener('change', function() {
             if (this.checked) {
                 childrenField.classList.add('open');
+                childrenNo.checked = false;
             }
         });
 
         childrenNo.addEventListener('change', function() {
             if (this.checked) {
                 childrenField.classList.remove('open');
+                childrenYes.checked = false;
                 const input = childrenField.querySelector('input');
                 if (input) input.value = '';
             }
