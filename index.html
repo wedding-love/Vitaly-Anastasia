@@ -521,25 +521,25 @@
             }
         }
 
-        /* 16+ стиль - без прозрачности */
+        /* 16+ стиль - как заголовок (темный бордовый) */
         .age-restriction {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .age-restriction .line {
             width: 40px;
             height: 1px;
-            background: var(--color-burgundy);
+            background: var(--color-dark-burgundy);
         }
 
         .age-restriction .text {
             font-size: clamp(0.65rem, 1.2vw, 0.8rem);
             letter-spacing: 0.2em;
-            color: var(--color-burgundy);
+            color: var(--color-dark-burgundy);
             font-weight: 300;
             text-transform: uppercase;
         }
@@ -636,7 +636,7 @@
                 </div>
             </div>
 
-            <!-- 16+ - бордовый цвет, без прозрачности -->
+            <!-- 16+ - темный бордовый как заголовок, увеличенный отступ -->
             <div class="age-restriction">
                 <span class="line"></span>
                 <span class="text">мероприятие 16+</span>
