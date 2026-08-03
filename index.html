@@ -217,7 +217,6 @@
             font-weight: 300;
         }
 
-        /* Поля, которые появляются - НЕ занимают место до появления */
         .guest-field,
         .children-field,
         .other-field {
@@ -273,7 +272,6 @@
             color: var(--color-beige);
         }
 
-        /* Единые отступы в анкете */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -504,9 +502,10 @@
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
         }
 
-        /* Оригинальные размеры заголовков как в исходном коде */
+        /* ВСЕ ЗАГОЛОВКИ КАК "Виталий & Анастасия" в конце страницы */
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
             font-weight: 300;
             font-style: italic;
             text-align: center;
@@ -519,6 +518,7 @@
         }
 
         .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.3rem, 2.5vw, 2rem);
             font-weight: 300;
             font-style: italic;
@@ -742,7 +742,7 @@
                     </select>
                 </div>
 
-                <!-- Гость - появляется при выборе "с гостем" -->
+                <!-- Гость -->
                 <div class="guest-field" id="guestField">
                     <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
                 </div>
@@ -762,7 +762,7 @@
                     </div>
                 </div>
 
-                <!-- Поле для детей - появляется при выборе "Да" -->
+                <!-- Поле для детей -->
                 <div class="children-field" id="childrenField">
                     <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна" class="rsvp-input">
                 </div>
@@ -828,7 +828,7 @@
                     </div>
                 </div>
 
-                <!-- Поле "Другое" для алкоголя - появляется при выборе "Другое" -->
+                <!-- Поле "Другое" для алкоголя -->
                 <div class="other-field" id="otherField">
                     <input type="text" name="alcohol_other" placeholder="Укажите ваш вариант" class="rsvp-input">
                 </div>
