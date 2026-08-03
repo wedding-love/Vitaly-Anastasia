@@ -245,8 +245,8 @@
         }
 
         .color-swatch {
-            width: clamp(44px, 10vw, 56px);
-            height: clamp(44px, 10vw, 56px);
+            width: clamp(40px, 10vw, 52px);
+            height: clamp(40px, 10vw, 52px);
             border-radius: 50%;
             display: inline-block;
             border: 2px solid rgba(0,0,0,0.06);
@@ -262,28 +262,14 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 0.75rem;
-            max-width: 320px;
+            max-width: 280px;
             margin: 0 auto;
+            justify-items: center;
         }
 
         .color-grid .color-swatch {
-            width: 100%;
-            aspect-ratio: 1/1;
-            height: auto;
-        }
-
-        .color-grid-row {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .color-grid-row .color-swatch {
-            flex: 1;
-            aspect-ratio: 1/1;
-            max-width: 56px;
+            width: clamp(40px, 10vw, 52px);
+            height: clamp(40px, 10vw, 52px);
         }
 
         .accent-bg {
@@ -690,7 +676,7 @@
         </div>
     </section>
 
-    <!-- DRESS CODE - БЕЛЫЙ ФОН (4+4 кружочка) -->
+    <!-- DRESS CODE - БЕЛЫЙ ФОН (4+4 кружочка, прежний размер) -->
     <section class="section-padding bg-white border-t border-gray-100">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="section-title" data-aos="fade-up">Дресс-код</h2>
