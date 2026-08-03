@@ -524,6 +524,7 @@
             text-align: center;
             margin-bottom: 1.5rem;
             color: var(--color-dark-burgundy);
+            white-space: nowrap;
         }
 
         .section-title-light {
@@ -564,6 +565,13 @@
             font-weight: 300;
             letter-spacing: 0.15em;
             text-transform: uppercase;
+        }
+
+        /* Для очень маленьких экранов уменьшаем размер шрифта, но сохраняем в одну строку */
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: clamp(1.6rem, 5vw, 2rem);
+            }
         }
     </style>
 </head>
@@ -676,7 +684,7 @@
         </div>
     </section>
 
-    <!-- DRESS CODE - БЕЛЫЙ ФОН (4+4 кружочка, прежний размер) -->
+    <!-- DRESS CODE - БЕЛЫЙ ФОН -->
     <section class="section-padding bg-white border-t border-gray-100">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="section-title" data-aos="fade-up">Дресс-код</h2>
