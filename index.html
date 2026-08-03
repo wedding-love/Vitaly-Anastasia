@@ -25,6 +25,10 @@
             --color-white: #ffffff;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: var(--color-beige);
             color: var(--color-text);
@@ -33,6 +37,8 @@
             -webkit-font-smoothing: antialiased;
             font-weight: 300;
             line-height: 1.7;
+            margin: 0;
+            padding: 0;
         }
 
         .serif {
@@ -98,11 +104,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: clamp(12px, 3vw, 30px);
+            flex-wrap: wrap;
         }
 
         .timer-item {
-            min-width: 70px;
+            min-width: clamp(60px, 15vw, 90px);
             text-align: center;
         }
 
@@ -115,7 +122,7 @@
         }
 
         .timer-label {
-            font-size: clamp(0.45rem, 1.5vw, 0.65rem);
+            font-size: clamp(0.4rem, 1.2vw, 0.65rem);
             letter-spacing: 0.15em;
             text-transform: lowercase;
             color: var(--color-beige);
@@ -132,7 +139,7 @@
             border-radius: 0;
             -webkit-appearance: none;
             color: var(--color-dark);
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
             transition: border-color 0.3s ease;
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
@@ -158,6 +165,7 @@
             background-repeat: no-repeat;
             background-position: right center;
             background-size: 12px;
+            padding-right: 30px;
         }
 
         .map-card {
@@ -173,7 +181,7 @@
 
         .venue-image {
             width: 100%;
-            height: 200px;
+            height: clamp(160px, 25vw, 200px);
             object-fit: cover;
             border-radius: 4px;
             margin-bottom: 1rem;
@@ -225,8 +233,8 @@
         }
 
         .color-swatch {
-            width: 52px;
-            height: 52px;
+            width: clamp(40px, 10vw, 52px);
+            height: clamp(40px, 10vw, 52px);
             border-radius: 50%;
             display: inline-block;
             border: 2px solid rgba(0,0,0,0.06);
@@ -277,6 +285,14 @@
             font-weight: 300;
             letter-spacing: 0.15em;
             font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .btn-submit {
+                width: auto;
+            }
         }
 
         .btn-submit:hover {
@@ -365,6 +381,103 @@
             color: #1a1a1a;
             opacity: 1;
         }
+
+        .custom-radio,
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            cursor: pointer;
+            font-weight: 300;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        .custom-radio:hover,
+        .custom-checkbox:hover {
+            background: rgba(85, 28, 37, 0.05);
+        }
+
+        .custom-radio input[type="radio"],
+        .custom-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-dark-burgundy);
+            flex-shrink: 0;
+            cursor: pointer;
+            min-width: 18px;
+        }
+
+        .custom-radio label,
+        .custom-checkbox label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .form-label {
+            font-weight: 400;
+            font-size: clamp(0.8rem, 1.8vw, 0.85rem);
+            letter-spacing: 0.05em;
+            color: var(--color-dark-burgundy);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-left: 4px;
+        }
+
+        .wish-block {
+            background: rgba(85, 28, 37, 0.04);
+            border-radius: 4px;
+            padding: 1.5rem;
+            border-left: 3px solid var(--color-dark-burgundy);
+            margin-bottom: 2rem;
+        }
+
+        .wish-block .serif {
+            color: var(--color-dark-burgundy);
+        }
+
+        .timing-item {
+            padding: 0.75rem 0;
+        }
+
+        .section-padding {
+            padding: clamp(3rem, 10vw, 8rem) clamp(1rem, 5vw, 2.5rem);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 4rem;
+            }
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
     </style>
 </head>
 <body>
@@ -379,7 +492,7 @@
             </h1>
             <div class="flex items-center justify-center space-x-4 md:space-x-6" data-aos="fade-up">
                 <span class="w-8 md:w-12 h-[1px] bg-white opacity-50"></span>
-                <p class="serif text-xl md:text-2xl italic tracking-widest">Сегодня, и навсегда</p>
+                <p class="serif text-xl md:text-2xl italic tracking-widest text-balance">Сегодня, и навсегда</p>
                 <span class="w-8 md:w-12 h-[1px] bg-white opacity-50"></span>
             </div>
             <div class="mt-6 flex justify-center gap-2" data-aos="fade-up" data-aos-delay="200">
@@ -391,11 +504,11 @@
         </div>
     </section>
 
-    <!-- WELCOME TEXT - БЕЛЫЙ ФОН (УДАЛЕНЫ 2 АБЗАЦА) -->
-    <section class="py-24 md:py-32 px-6 bg-white">
+    <!-- WELCOME TEXT -->
+    <section class="section-padding bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <div class="divider mb-10" data-aos="fade-down"></div>
-            <h2 class="serif text-4xl md:text-5xl mb-6 italic" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</h2>
+            <h2 class="serif text-4xl md:text-5xl mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</h2>
             
             <div class="space-y-6 max-w-2xl mx-auto text-left concept-quote" data-aos="fade-up" data-aos-delay="100">
                 <p class="text-base md:text-lg leading-relaxed font-light text-gray-600">
@@ -408,14 +521,14 @@
         </div>
     </section>
 
-    <!-- DETAILS - БОРДОВЫЙ ФОН, БЕЛАЯ КАРТОЧКА -->
-    <section class="py-24 md:py-32 px-6 bg-burgundy-dark">
+    <!-- DETAILS - БОРДОВЫЙ ФОН -->
+    <section class="section-padding bg-burgundy-dark">
         <div class="max-w-4xl mx-auto">
-            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic" data-aos="fade-up" style="color:var(--color-beige);">Детали торжества</h2>
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-beige);">Детали торжества</h2>
             <div class="deco-line-beige mb-12" data-aos="fade-up"></div>
 
             <div class="grid md:grid-cols-1 max-w-2xl mx-auto">
-                <div class="map-card p-8 shadow-sm text-center" data-aos="fade-right">
+                <div class="map-card p-6 md:p-8 shadow-sm text-center" data-aos="fade-right">
                     <img src="место.png" alt="Загородный клуб Лес до небес" class="venue-image" onerror="this.style.display='none'">
                     <h3 class="serif text-2xl mb-4" style="color:var(--color-dark-burgundy);">Место проведения</h3>
                     <p class="serif text-xl md:text-2xl italic mb-4" style="color:var(--color-dark-wood);">Загородный клуб «Лес до небес»</p>
@@ -423,7 +536,7 @@
                         Уютный зал с панорамными окнами, вид на вековой лес и закат в оттенках меди и багрянца. Мы выбрали это место за его атмосферу — здесь хочется замедлиться и чувствовать каждое мгновение.
                     </p>
                     <p class="font-light text-gray-500 text-xs mb-6 italic">г. Екатеринбург, ул. Абрикосовая, д.7а</p>
-                    <a href="https://yandex.by/maps/org/les_do_nebes/80408221023/?ll=60.497312%2C56.712363&z=16.19" target="_blank" class="inline-block px-8 py-3 accent-bg uppercase tracking-widest text-[9px] transition-all" style="letter-spacing:0.15em;">
+                    <a href="https://yandex.by/maps/org/les_do_nebes/80408221023/?ll=60.497312%2C56.712363&z=16.19" target="_blank" class="inline-block px-8 py-3 accent-bg uppercase tracking-widest text-[9px] transition-all w-full md:w-auto" style="letter-spacing:0.15em;">
                         Построить маршрут
                     </a>
                 </div>
@@ -431,26 +544,51 @@
         </div>
     </section>
 
-    <!-- DRESS CODE - БЕЛЫЙ ФОН (ПАЛИТРА: 5+4 = 9 ЦВЕТОВ) -->
-    <section class="py-24 md:py-32 px-6 bg-white">
+    <!-- TIMING (Программа дня) -->
+    <section class="section-padding bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-4xl md:text-5xl text-center mb-6 italic text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Программа дня</h2>
+            <div class="deco-line mb-14" data-aos="fade-up"></div>
+            
+            <div class="space-y-3 max-w-md mx-auto px-2">
+                <div class="flex justify-between items-center border-b border-gray-100 pb-3 timing-item" data-aos="fade-up">
+                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">16:00</span>
+                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Фуршет / Welcome-зона</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-100 pb-3 timing-item" data-aos="fade-up">
+                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">16:30</span>
+                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Свадебная церемония</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-100 pb-3 timing-item" data-aos="fade-up">
+                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">17:00</span>
+                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Праздничный банкет</span>
+                </div>
+                <div class="flex justify-between items-center timing-item" data-aos="fade-up">
+                    <span class="serif text-xl md:text-2xl italic" style="color:var(--color-burgundy); min-width:70px;">23:00</span>
+                    <span class="serif text-base md:text-lg uppercase tracking-widest text-right" style="color:var(--color-dark-burgundy);">Завершение вечера</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRESS CODE - БЕЛЫЙ ФОН -->
+    <section class="section-padding bg-white border-t border-gray-100">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="serif text-4xl md:text-5xl italic mb-4" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
-            <p class="text-sm font-light text-gray-500 mb-6 max-w-md mx-auto" data-aos="fade-up">
+            <h2 class="serif text-4xl md:text-5xl italic mb-4 text-balance" data-aos="fade-up" style="color:var(--color-dark-burgundy);">Дресс-код</h2>
+            <p class="text-sm font-light text-gray-500 mb-6 max-w-md mx-auto text-balance" data-aos="fade-up">
                 Мы будем рады видеть вас в нарядах, отражающих благородство осенней палитры
             </p>
             <div class="deco-line mb-10" data-aos="fade-up"></div>
 
             <div class="max-w-md mx-auto" data-aos="fade-up">
-                <!-- ПЕРВАЯ СТРОКА: 5 ЦВЕТОВ -->
-                <div class="flex flex-wrap justify-center gap-4">
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4">
                     <span class="color-swatch" style="background:#deb0b2;"></span>
                     <span class="color-swatch" style="background:#7e2129;"></span>
                     <span class="color-swatch" style="background:#7e836b;"></span>
                     <span class="color-swatch" style="background:#551c25;"></span>
                     <span class="color-swatch" style="background:#6a6a48;"></span>
                 </div>
-                <!-- ВТОРАЯ СТРОКА: 4 ЦВЕТА (без добавления новых) -->
-                <div class="flex flex-wrap justify-center gap-4 mt-4">
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-3 md:mt-4">
                     <span class="color-swatch" style="background:#a87653;"></span>
                     <span class="color-swatch" style="background:#7a5946;"></span>
                     <span class="color-swatch" style="background:#743232;"></span>
@@ -461,7 +599,7 @@
     </section>
 
     <!-- TIMER - БОРДОВЫЙ ФОН -->
-    <section class="py-20 bg-burgundy-dark">
+    <section class="section-padding bg-burgundy-dark">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <p class="uppercase tracking-widest text-[10px] mb-8 timer-heading" style="letter-spacing:0.3em;">До встречи осталось:</p>
             <div class="timer-container">
@@ -486,16 +624,26 @@
     </section>
 
     <!-- RSVP FORM - БЕЛЫЙ ФОН -->
-    <section class="py-24 md:py-32 px-6 bg-white">
+    <section class="section-padding bg-white">
         <div class="max-w-2xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="serif text-4xl md:text-6xl italic mb-4" style="color:var(--color-dark-burgundy);">Подтверждение присутствия</h2>
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="serif text-4xl md:text-6xl italic mb-4 text-balance" style="color:var(--color-dark-burgundy);">Подтверждение присутствия</h2>
                 <p class="font-extralight tracking-widest uppercase text-[10px] mb-4 text-important-dark" style="letter-spacing:0.3em; color:#1a1a1a; opacity:1;">
                     Для нас очень важно ваше присутствие
                 </p>
-                <p class="text-xs font-light text-gray-500">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-dark-burgundy); font-weight:400;">30 июня 2026 года</strong>.</p>
+                <p class="text-xs font-light text-gray-500 text-balance">Пожалуйста, заполните форму ниже, чтобы мы могли учесть все детали при планировании. Будем признательны за ваш ответ до <strong style="color:var(--color-dark-burgundy); font-weight:400;">30 июня 2026 года</strong>.</p>
             </div>
-            <form id="weddingForm" class="space-y-8" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
+
+            <!-- Блок пожеланий (перед анкетой, без заголовка) -->
+            <div class="wish-block" data-aos="fade-up">
+                <p class="text-sm font-light text-gray-600 leading-relaxed text-balance">
+                    Мы будем очень рады, если вместо традиционных цветов вы принесёте пачку корма для животных.
+                    Всё собранное мы передадим в приют, чтобы подарить заботу тем, кто в ней особенно нуждается.
+                    Спасибо, что разделяете с нами это доброе дело!
+                </p>
+            </div>
+            
+            <form id="weddingForm" class="space-y-6" data-aos="fade-up" action="https://formspree.io/f/mdavjang" method="POST">
                 <input type="hidden" name="_subject" value="Новое подтверждение с сайта свадьбы">
 
                 <div>
@@ -514,8 +662,75 @@
                     <input type="text" name="guest_name" placeholder="Имя вашего гостя" class="rsvp-input">
                 </div>
 
+                <!-- Салаты -->
+                <div class="form-group">
+                    <span class="form-label">Выберите салат (один вариант)</span>
+                    <div class="radio-group">
+                        <label class="custom-radio">
+                            <input type="radio" name="salad" value="Цезарь">
+                            <span>Цезарь</span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="salad" value="Салат с вяленой уткой">
+                            <span>Салат с вяленой уткой</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Горячее -->
+                <div class="form-group">
+                    <span class="form-label">Выберите горячее блюдо (один вариант)</span>
+                    <div class="radio-group">
+                        <label class="custom-radio">
+                            <input type="radio" name="main" value="Утиная ножка с бэби картофель">
+                            <span>Утиная ножка с бэби картофель</span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="main" value="Вырезка из говядины с картофельным пюре">
+                            <span>Вырезка из говядины с картофельным пюре</span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="main" value="Лосось на пару с рататуем">
+                            <span>Лосось на пару с рататуем</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Алкоголь -->
+                <div class="form-group">
+                    <span class="form-label">Выберите алкоголь (можно несколько вариантов)</span>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="alcohol" value="Белое вино п/сх">
+                            <span>Белое вино п/сх</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="alcohol" value="Красное сх">
+                            <span>Красное сх</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="alcohol" value="Коньяк">
+                            <span>Коньяк</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="alcohol" value="Водка">
+                            <span>Водка</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="alcohol" value="Другое">
+                            <span>Другое</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Дети -->
+                <div class="form-group">
+                    <span class="form-label">Если вы берёте с собой детей</span>
+                    <input type="text" name="children_info" placeholder="Количество, возраст, какая еда им нужна (комментарий)" class="rsvp-input">
+                </div>
+
                 <div class="text-center pt-4">
-                    <button type="submit" class="w-full md:w-auto px-12 py-4 btn-submit uppercase tracking-widest text-[11px] transition-all duration-500">
+                    <button type="submit" class="px-8 md:px-12 py-4 btn-submit uppercase tracking-widest text-[11px] transition-all duration-500">
                         Отправить ответ
                     </button>
                 </div>
@@ -524,15 +739,15 @@
     </section>
 
     <!-- CONTACTS - БОРДОВЫЙ ФОН -->
-    <section class="py-24 md:py-32 px-6 bg-burgundy-dark">
+    <section class="section-padding bg-burgundy-dark">
         <div class="max-w-3xl mx-auto">
-            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic" data-aos="fade-up" style="color:var(--color-beige);">Остались вопросы?</h2>
+            <h2 class="serif text-4xl md:text-5xl text-center mb-4 italic text-balance" data-aos="fade-up" style="color:var(--color-beige);">Остались вопросы?</h2>
             <div class="divider-beige mb-12" data-aos="fade-up"></div>
-            <p class="text-center text-sm font-light mb-12" style="color:rgba(255,255,255,0.6);" data-aos="fade-up">
+            <p class="text-center text-sm font-light mb-12 text-balance" style="color:rgba(255,255,255,0.6);" data-aos="fade-up">
                 Мы будем рады помочь вам сориентироваться в деталях праздника
             </p>
 
-            <div class="max-w-sm mx-auto" data-aos="fade-up">
+            <div class="max-w-sm mx-auto px-4" data-aos="fade-up">
                 <div class="contact-card">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -546,15 +761,14 @@
                     <p class="text-sm font-light mb-3" style="color:rgba(255,255,255,0.6);">Все вопросы по мероприятию</p>
                     <p class="font-medium text-lg" style="color:var(--color-beige); font-family:'Cormorant Garamond',serif;">Виолетта</p>
                     <a href="tel:+79521337356" class="transition-colors text-sm block mt-2" style="color:rgba(255,255,255,0.7);">
-                        +7 (952) 133-73-56
-                    </a>
+                        +7 (952) 133-73-56                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER - БЕЛЫЙ ФОН -->
-    <footer class="py-16 text-center bg-white">
+    <footer class="section-padding text-center bg-white">
         <div class="serif text-2xl md:text-3xl italic mb-4" style="color:var(--color-dark-burgundy);">Виталий & Анастасия</div>
         <p class="serif text-base md:text-lg italic mb-6" style="color:var(--color-dark-burgundy);">Сегодня, и навсегда</p>
         <p class="uppercase tracking-[0.3em] text-[9px] text-gray-400 mb-8 font-light" style="letter-spacing:0.3em;">С любовью, до встречи!</p>
@@ -633,6 +847,7 @@
                     alert('Ваш ответ успешно отправлен! Спасибо за подтверждение.');
                     form.reset();
                     guestField.classList.remove('open');
+                    document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => el.checked = false);
                 } else {
                     alert('Произошла ошибка. Попробуйте еще раз или свяжитесь с нами напрямую.');
                 }
