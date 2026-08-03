@@ -527,14 +527,6 @@
                 font-size: clamp(1.6rem, 5vw, 2rem);
             }
         }
-
-        .age-restriction {
-            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
-            color: var(--color-burgundy);
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
-        }
     </style>
 </head>
 <body>
@@ -620,7 +612,13 @@
                     <span class="event serif uppercase tracking-widest text-right">Завершение вечера</span>
                 </div>
             </div>
-            <p class="age-restriction text-center mt-4">Мероприятие 16+</p>
+
+            <!-- 16+ с линиями по бокам -->
+            <div class="text-center mt-5" style="display:flex; align-items:center; justify-content:center; gap:1.5rem; opacity:0.4;">
+                <span style="width:40px; height:1px; background:var(--color-burgundy);"></span>
+                <span style="font-size:clamp(0.65rem, 1.2vw, 0.8rem); letter-spacing:0.2em; color:var(--color-burgundy); font-weight:300; text-transform:uppercase;">16+</span>
+                <span style="width:40px; height:1px; background:var(--color-burgundy);"></span>
+            </div>
         </div>
     </section>
 
@@ -633,9 +631,7 @@
             <div class="wish-card-alt" data-aos="fade-up">
                 <div class="deco-line-wish"></div>
                 <p>
-                    Дорогие гости! Мы будем очень рады вашему присутствию на нашем празднике. 
-                    Пожалуйста, <span class="wish-highlight">воздержитесь от цветов</span> — вместо этого мы будем благодарны, если вы принесёте пачку корма для животных. 
-                    Всё собранное мы передадим в приют, чтобы подарить заботу и тепло тем, кто в этом особенно нуждается.
+                    Дорогие гости! Пожалуйста, <span class="wish-highlight">воздержитесь от цветов</span> — вместо этого мы будем благодарны, если вы принесёте пачку корма для животных. Всё собранное мы передадим в приют, чтобы подарить заботу и тепло тем, кто в этом особенно нуждается.
                 </p>
                 <p style="margin-top:0.75rem; font-size:clamp(0.85rem, 1.4vw, 1rem); opacity:0.7; color:rgba(255,255,255,0.7);">
                     Спасибо, что разделяете с нами это доброе дело!
